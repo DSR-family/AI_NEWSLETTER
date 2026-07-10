@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리더의 AI 곱셈법 제5호: AI로 만드는 시각화 자료</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        .hero-bg { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        .dept-btn { transition: all 0.2s ease-in-out; }
+        .dept-btn.active { background-color: #0ea5e9; color: white; border-color: #0ea5e9; box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.3); }
+        .dept-btn:not(.active):hover { background-color: #f1f5f9; border-color: #cbd5e1; }
+        .dsr-logo { font-family: 'Pretendard', sans-serif; font-weight: 900; letter-spacing: -0.05em; display: flex; align-items: center; }
+        .dsr-logo span { color: #0284c7; padding: 0 2px; }
+        .dsr-logo .pipe { color: #cbd5e1; font-weight: 200; margin: 0 4px; }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-blue-200 selection:text-blue-900">
+
+    <nav class="fixed top-0 w-full z-50 px-6 lg:px-10 py-4 flex justify-between items-center bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
+        <div class="flex items-center gap-4">
+            <img src="DSR_파란바_배경없음.png" alt="DSR Logo" class="h-8 object-contain" onerror="this.outerHTML='<div class=\'dsr-logo text-3xl\'><span>D</span><span class=\'pipe\'>|</span><span>S</span><span class=\'pipe\'>|</span><span>R</span></div>'">
+            <div class="border-l border-slate-300 pl-4">
+                <span class="text-xl font-black tracking-tight text-slate-900 block leading-none uppercase">AI Multiplier</span>
+                <span class="text-[10px] text-blue-600 font-bold tracking-[0.2em] uppercase">Intelligence for Leaders</span>
+            </div>
+        </div>
+        <div class="hidden md:flex items-center gap-4">
+            <span class="text-xs font-semibold text-slate-500 tracking-wider">Premium Newsletter</span>
+            <div class="text-[11px] font-bold text-slate-700 tracking-widest uppercase bg-slate-100 border border-slate-200 px-4 py-1.5 rounded-full shadow-inner">
+                Phase 2 / Vol. 05
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-24">
+
+        <!-- Hero -->
+        <section class="hero-bg py-24 px-6 mb-20 border-b border-blue-100/50 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMEw0IDRaIiBzdHJva2U9IiM5NGExYjIiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz4KPC9zdmc+')] opacity-50 pointer-events-none"></div>
+            <div class="max-w-5xl mx-auto relative z-10 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/80 text-blue-800 text-[11px] font-black uppercase tracking-widest mb-8 border border-blue-200 shadow-sm backdrop-blur-sm">
+                    Phase 2 · 자산화
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight text-slate-900">
+                    코딩은 몰라도 됩니다.
+                    <div class="mt-6">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">프롬프트 한 줄</span>이면
+                    </div>
+                    <div class="mt-3">시각화 자료가 완성됩니다.</div>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed font-medium mx-auto md:mx-0">
+                    AI는 데이터를 팀이 직접 확인할 수 있는 <strong class="text-blue-700">시각화 자료</strong>로 바꿉니다. 리더는 이제 데이터를 어떻게 보여주고, 어떤 형태로 활용하게 할지를 설계해야 합니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Roadmap -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-slate-100 relative overflow-hidden">
+                <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-50 rounded-full blur-3xl z-0"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-1 h-8 bg-blue-600 rounded-full"></div>
+                        <h2 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">앞으로의 여정: 리더의 AI 전략 로드맵</h2>
+                    </div>
+                    <p class="text-slate-600 mb-12 leading-relaxed max-w-4xl text-lg">
+                        본 리포트는 실무진의 AI 활용 방식을 이해하고, 리더 본인의 전문성을 통해 시스템을 지휘하는 3단계 마스터 로드맵을 제공합니다. 매 호마다 영상 통찰력(Radar), 실무 검증법(해독기), 실전 지휘 미션(Action Lab)이 고정 제공됩니다.
+                    </p>
+                    <div class="grid lg:grid-cols-3 gap-6">
+                        <!-- Phase 1 -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 opacity-80">
+                            <span class="text-xs font-black uppercase tracking-wider text-slate-400 mb-2 block">Phase 1. 지휘권 확보</span>
+                            <h4 class="text-base font-bold text-slate-700 mb-4 pb-3 border-b border-slate-200">소통의 해상도 높이기</h4>
+                            <ul class="space-y-3 text-sm text-slate-500">
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.01</strong> <span class="line-through">에이전트를 지휘하는 리더의 내공</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.02</strong> <span class="line-through">'바이브 코딩'의 원리와 실체</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.03</strong> <span class="line-through">검색의 종말, '딥 리서치' 활용법</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.04</strong> <span class="line-through">우리 팀의 무기 고르기 (AI 3대장)</span></li>
+                            </ul>
+                        </div>
+                        <!-- Phase 2 -->
+                        <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100 relative shadow-sm">
+                            <span class="text-xs font-black uppercase tracking-wider text-blue-600 mb-2 block">Phase 2. 자산화</span>
+                            <h4 class="text-base font-bold text-slate-900 mb-4 pb-3 border-b border-blue-200">데이터 시각화와 맞춤 비서</h4>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-center gap-2 relative bg-white p-2 -ml-2 rounded-lg shadow-sm border border-blue-100">
+                                    <span class="absolute -left-1 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+                                    <strong class="text-blue-700 ml-2">Vol.05</strong>
+                                    <span class="text-slate-900 font-bold">AI로 만드는 시각화 자료</span>
+                                </li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.06</strong> <span class="text-slate-600">지식을 복제하는 '프로젝트' 설정</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.07</strong> <span class="text-slate-600">우리 팀만의 전문가, 'Gems' 운영</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.08</strong> <span class="text-slate-600">흩어진 사내 데이터 통합 (커넥터)</span></li>
+                            </ul>
+                        </div>
+                        <!-- Phase 3 -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 opacity-80">
+                            <span class="text-xs font-black uppercase tracking-wider text-slate-400 mb-2 block">Phase 3. 시스템화</span>
+                            <h4 class="text-base font-bold text-slate-700 mb-4 pb-3 border-b border-slate-200">자동화와 전략적 의사결정</h4>
+                            <ul class="space-y-3 text-sm text-slate-500">
+                                <li class="flex items-start gap-2"><strong>Vol.09</strong> <span>스스로 보고하는 '슈퍼 젬스' 파이프라인</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.10</strong> <span>노코드 시스템 엔지니어링 (Opal)</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.11</strong> <span>최종 결정의 방어벽, 'AI 레드팀'</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.12</strong> <span>대체 불가능한 리더의 본질</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Radar -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-2 md:p-3 rounded-[2rem] shadow-2xl border border-slate-100">
+                        <div class="video-wrapper bg-slate-100 cursor-pointer group" onclick="window.open('https://www.youtube.com/watch?v=6YZqfUYAPQY', '_blank')">
+                            <img src="https://img.youtube.com/vi/6YZqfUYAPQY/maxresdefault.jpg"
+                                 alt="데이터 시각화부터 인터랙티브 대쉬보드까지"
+                                 class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                                 onerror="this.style.display='none'">
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-all z-10">
+                                <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center px-2">
+                        <span class="text-[11px] font-bold text-slate-400 tracking-widest uppercase">Video Insight Source</span>
+                        <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">데이터 시각화부터 인터랙티브 대쉬보드까지 📊</span>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 space-y-8 mt-8 lg:mt-0">
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-black mb-4 rounded-md uppercase tracking-wider border border-blue-100">Strategic Radar</div>
+                        <h3 class="text-3xl font-black mb-6 text-slate-900 leading-tight">데이터 시각화의 기준은<br>목적에서 시작합니다</h3>
+                        <p class="text-slate-600 text-base leading-relaxed mb-6">
+                            AI는 데이터를 팀이 직접 확인할 수 있는 시각화 자료로 바꿉니다. 리더는 이제 데이터를 어떻게 보여주고, 어떤 형태로 활용하게 할지를 설계해야 합니다.
+                        </p>
+                        <p class="text-slate-600 text-base leading-relaxed mb-8">
+                            같은 엑셀 데이터라도 목적에 따라 결과물은 달라집니다. <strong>누가, 얼마나 자주, 어떤 판단을 위해 볼 것인지</strong>를 먼저 정해야 AI가 만든 결과물이 실제 업무 도구가 됩니다.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm">
+                        <h4 class="text-sm font-bold text-slate-800 uppercase tracking-widest mb-4 border-b border-slate-200 pb-2">The Leader's Role</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            AI가 화면을 만들 수 있어도, <strong>기준은 리더가 정해야 합니다.</strong><br><br>
+                            리더가 먼저 정해야 할 질문은 세 가지입니다. <strong>이 자료는 보고용인가, 계산용인가, 공유용인가.</strong> 이 기준이 있어야 AI가 만든 화면이 단순한 시각화 자료가 아니라 팀의 업무 방식으로 연결됩니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Workflow 해독기 -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="bg-slate-900 rounded-[3rem] p-10 md:p-16 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
+                <div class="relative z-10 text-white">
+                    <div class="max-w-3xl mb-12">
+                        <div class="inline-block px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-blue-300 text-xs font-black mb-6 border border-white/10 uppercase tracking-widest">Team Workflow 해독기</div>
+                        <h2 class="text-3xl md:text-4xl font-black leading-tight tracking-tight mb-4">데이터 활용 방식, 어떻게 나눌 것인가</h2>
+                        <p class="text-slate-400 text-base leading-relaxed font-light">
+                            어떤 화면을 만들지는 데이터의 양보다 업무의 쓰임새가 결정합니다. 리더는 먼저 보고용·계산용·공유용을 구분해야 합니다.
+                        </p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- 보고용 -->
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-7 rounded-3xl transition-transform hover:-translate-y-1 flex flex-col">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-black mb-4 text-sm">📊</div>
+                            <h4 class="text-white font-black text-sm uppercase tracking-wider mb-1">보고용</h4>
+                            <p class="text-blue-400 text-xs font-bold mb-5">차트형 시각화</p>
+                            <p class="text-white text-xl font-black leading-snug mb-5 whitespace-nowrap">흐름을 빠르게 읽는 자료</p>
+                            <div class="border-t border-white/10 pt-5 mt-auto">
+                                <p class="text-sm text-slate-400 leading-relaxed">
+                                    월별 실적, 품질 추이, 예산 집행률처럼 흐름을 빠르게 읽어야 하는 자료는 차트가 적합합니다. 목적은 모든 데이터를 담는 것이 아니라 <strong class="text-slate-200">이상 징후와 변화 방향</strong>을 바로 보이게 하는 것입니다.
+                                </p>
+                                <p class="text-xs text-slate-500 mt-3">
+                                    <strong class="text-slate-300">이럴 때:</strong> 월별 실적 추이, 품질 불량률, <span class="whitespace-nowrap">비용 증감 비교</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 계산용 -->
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-7 rounded-3xl transition-transform hover:-translate-y-1 flex flex-col">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-black mb-4 text-sm">🧮</div>
+                            <h4 class="text-white font-black text-sm uppercase tracking-wider mb-1">계산용</h4>
+                            <p class="text-blue-400 text-xs font-bold mb-5">조건별 판단 도구</p>
+                            <p class="text-white text-xl font-black leading-snug mb-5 whitespace-nowrap">조건을 바꿔 비교하는 자료</p>
+                            <div class="border-t border-white/10 pt-5 mt-auto">
+                                <p class="text-sm text-slate-400 leading-relaxed">
+                                    원가, 견적, 목표 달성률처럼 조건을 바꿔 비교해야 하는 자료는 계산형 화면이 적합합니다. 핵심은 엑셀을 대체하는 것이 아니라 <strong class="text-slate-200">수식과 판단 기준을 입력창 안에 묶어</strong> 누구나 같은 방식으로 계산하게 하는 것입니다.
+                                </p>
+                                <p class="text-xs text-slate-500 mt-3">
+                                    <strong class="text-slate-300">이럴 때:</strong> 원가·견적 산출, 목표 달성률, ROI 비교
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 공유용 -->
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-7 rounded-3xl transition-transform hover:-translate-y-1 flex flex-col">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-black mb-4 text-sm">🖥️</div>
+                            <h4 class="text-white font-black text-sm uppercase tracking-wider mb-1">공유용</h4>
+                            <p class="text-blue-400 text-xs font-bold mb-5">팀 공통 화면</p>
+                            <p class="text-white text-xl font-black leading-snug mb-5 whitespace-nowrap">팀이 함께 보는 자료</p>
+                            <div class="border-t border-white/10 pt-5 mt-auto">
+                                <p class="text-sm text-slate-400 leading-relaxed">
+                                    주간 KPI, 프로젝트 진행도, 재고 현황처럼 여러 사람이 같은 기준으로 함께 봐야 하는 자료는 대시보드가 적합합니다. 목적은 보고서를 줄이는 것이 아니라 <strong class="text-slate-200">팀의 공통 판단 기준</strong>을 만드는 것입니다.
+                                </p>
+                                <p class="text-xs text-slate-500 mt-3">
+                                    <strong class="text-slate-300">이럴 때:</strong> 주간 KPI, 프로젝트 진행도, 재고 현황
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Lab -->
+        <section class="max-w-6xl mx-auto px-6 mb-20">
+            <div class="mb-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-600 rounded-lg text-white text-[11px] font-black mb-4 uppercase tracking-widest shadow-md">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-200 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                        </span>
+                        Action Lab: 오늘의 지휘 미션
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black tracking-tight text-slate-900 mb-2">우리 팀의 '데이터 활용 방식' 설계하기</h2>
+                    <p class="text-slate-600 text-lg">담당 부서와 업무 맥락을 입력하면, <strong>차트·계산기·대시보드 중 어떤 형태가 맞는지</strong> 판단 기준을 정리해 드립니다.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-slate-200 overflow-hidden flex flex-col lg:flex-row">
+                
+                <!-- Left: Inputs -->
+                <div class="w-full lg:w-5/12 bg-slate-50 p-6 md:p-10 border-b lg:border-b-0 lg:border-r border-slate-200 flex flex-col">
+                    
+                    <div class="mb-8">
+                        <label class="text-xs font-black text-slate-500 uppercase tracking-widest mb-3 block">1. 담당 부서 선택</label>
+                        <div class="flex overflow-x-auto pb-2 scrollbar-hide gap-2">
+                            <button onclick="changeDept('제조', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200 active">🏭 제조/생산</button>
+                            <button onclick="changeDept('품질', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">🔎 품질관리</button>
+                            <button onclick="changeDept('기술', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">💡 기술/R&D</button>
+                            <button onclick="changeDept('판매', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">🤝 판매/영업</button>
+                            <button onclick="changeDept('설비', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">⚙️ 설비/보전</button>
+                            <button onclick="changeDept('회계', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">📊 회계/재무</button>
+                            <button onclick="changeDept('총무', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">👥 총무/인사</button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 flex-grow">
+                        <div>
+                            <label class="text-xs font-black text-slate-500 uppercase tracking-widest mb-2 block flex items-center justify-between">
+                                <span>2. 업무 데이터 맥락</span>
+                                <span id="deptTitleBadge" class="bg-slate-200 text-slate-600 text-[10px] px-2 py-0.5 rounded">제조/생산 데이터</span>
+                            </label>
+                            <textarea id="dashContext" rows="5" oninput="generateDashPrompt()" class="w-full p-4 text-sm text-slate-700 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none shadow-sm"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="text-xs font-black text-blue-600 uppercase tracking-widest mb-2 block">
+                                3. Leader's Criteria (리더의 활용 기준)
+                            </label>
+                            <p class="text-[11px] text-slate-500 mb-2 leading-tight">무엇을 보여줄지, 무엇을 계산하게 할지, 무엇을 함께 확인하게 할지 입력하십시오. (우측 프롬프트에 실시간 반영)</p>
+                            <textarea id="dashCriteria" rows="4" oninput="generateDashPrompt()" class="w-full p-4 text-sm text-slate-900 bg-blue-50/50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none placeholder-slate-400 shadow-sm transition-all"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Output Prompt (Terminal Style) -->
+                <div class="w-full lg:w-7/12 bg-[#0f172a] p-6 md:p-10 flex flex-col relative">
+                    <div class="flex items-center justify-between mb-6">
+                        <label class="text-xs font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            Data Tool Prompt (For Claude / ChatGPT / Gemini)
+                        </label>
+                        <span class="text-[10px] text-blue-400 bg-blue-400/10 border border-blue-400/20 px-2 py-0.5 rounded font-mono">Data Director Level</span>
+                    </div>
+                    
+                    <div class="flex-grow relative">
+                        <pre id="finalDashPrompt" class="text-[13px] text-slate-300 font-mono whitespace-pre-wrap leading-relaxed overflow-y-auto scrollbar-hide h-64 lg:h-[400px] w-full focus:outline-none selection:bg-blue-500/30 selection:text-white pb-10"></pre>
+                        <div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-[#0f172a] to-transparent pointer-events-none"></div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-slate-800 flex justify-end shrink-0">
+                        <button onclick="copyDashPrompt()" id="dashCopyBtn" class="w-full md:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                            <span>명령서 복사 후 Claude 실행</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 px-8 bg-slate-900 text-white border-t border-slate-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start">
+                <div class="bg-white px-3 py-1.5 rounded-md mb-4 inline-block">
+                    <img src="DSR_파란바_배경없음.png" alt="DSR Logo" class="h-6 object-contain" onerror="this.outerHTML='<span class=\'text-blue-600 font-black\'>D|S|R</span>'">
+                </div>
+                <p class="text-sm text-slate-400 max-w-md text-center md:text-left leading-relaxed">
+                    본 리포트는 DSR 리더의 전략적 성장을 위해 발행됩니다. 중요한 것은 화면 제작 기술이 아니라, 데이터를 보고용·계산용·공유용으로 구분해 팀의 업무 방식으로 연결하는 판단력입니다.
+                </p>
+            </div>
+            <div class="text-[11px] text-slate-500 tracking-widest font-semibold text-center md:text-right uppercase leading-loose">
+                Copyright © 2026 DSR Corp. & DSR Wire Corp.<br>All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const deptData = {
+            '제조': {
+                title: '제조/생산 데이터',
+                context: '제조 현장에서 발생하는 다음 데이터를 활용하려 합니다:\n- 라인별 일일 생산량과 목표 대비 실적\n- 설비 가동률과 비가동 사유\n- 공정별 불량률과 재작업 건수',
+                criteriaPlaceholder: '예: 관리자는 라인별 이상 징후를 먼저 보고, 담당자는 일자·설비·공정별로 상세 원인을 확인할 수 있어야 합니다.',
+                recommendation: '생산 데이터의 용도를 보고용·계산용·공유용으로 나누고, 차트·계산기·대시보드 중 적합한 형태를 추천하라.'
+            },
+            '품질': {
+                title: '품질관리 데이터',
+                context: '품질관리 업무에서 발생하는 다음 데이터를 활용하려 합니다:\n- 불량 유형별 발생 건수와 추이\n- 고객 클레임 접수·처리 현황\n- 검사 결과와 시정조치 진행 상태',
+                criteriaPlaceholder: '예: 팀장은 불량 증가 항목을 즉시 파악하고, 담당자는 클레임별 원인·조치·완료 여부를 필터로 확인할 수 있어야 합니다.',
+                recommendation: '품질 데이터의 용도를 보고용·계산용·공유용으로 나누고, 차트·계산기·대시보드 중 적합한 형태를 추천하라.'
+            },
+            '기술': {
+                title: '기술/R&D 데이터',
+                context: '기술/R&D 업무에서 발생하는 다음 데이터를 활용하려 합니다:\n- 실험 조건별 결과값과 성공률\n- 개발 과제별 진행률과 이슈 현황\n- 특허·논문·경쟁사 기술 조사 결과',
+                criteriaPlaceholder: '예: 과제 책임자는 핵심 실험 결과를 빠르게 보고, 연구원은 조건값을 바꿔가며 예상 결과와 우선순위를 검토할 수 있어야 합니다.',
+                recommendation: '기술/R&D 데이터의 용도를 보고용·계산용·공유용으로 나누고, 차트·계산기·대시보드 중 적합한 형태를 추천하라.'
+            },
+            '판매': {
+                title: '판매/영업 데이터',
+                context: '판매/영업 업무에서 발생하는 다음 데이터를 활용하려 합니다:\n- 거래처별 매출과 목표 달성률\n- 제품군별 판매 추이와 이익률\n- 수주 가능성, 견적 현황, 미팅 후속 조치',
+                criteriaPlaceholder: '예: 리더는 매출 미달 거래처와 고마진 제품군을 먼저 보고, 영업 담당자는 거래처별 상세 이력과 후속 조치를 확인할 수 있어야 합니다.',
+                recommendation: '판매/영업 데이터의 용도를 보고용·계산용·공유용으로 나누고, 차트·계산기·대시보드 중 적합한 형태를 추천하라.'
+            },
+            '설비': {
+                title: '설비/보전 데이터',
+                context: '설비/보전 업무에서 발생하는 다음 데이터를 활용하려 합니다:\n- 설비별 고장 이력과 정비 주기\n- 점검 결과와 조치 상태\n- 예비품 재고, 구매 요청, 교체 비용',
+                criteriaPlaceholder: '예: 관리자는 반복 고장 설비와 조치 지연 항목을 먼저 보고, 담당자는 설비별 정비 이력과 예비품 재고를 함께 확인할 수 있어야 합니다.',
+                recommendation: '설비/보전 데이터의 용도를 보고용·계산용·공유용으로 나누고, 차트·계산기·대시보드 중 적합한 형태를 추천하라.'
+            },
+            '회계': {
+                title: '회계/재무 데이터',
+                context: '회계/재무 업무에서 발생하는 다음 데이터를 활용하려 합니다:\n- 항목별 예산 대비 실적\n- 월별 손익과 비용 구조\n- 부서별 집행률과 초과 항목',
+                criteriaPlaceholder: '예: 경영진은 예산 초과 항목과 손익 변동 원인을 먼저 보고, 실무자는 부서·계정·월별 상세 내역을 확인할 수 있어야 합니다.',
+                recommendation: '회계/재무 데이터의 용도를 보고용·계산용·공유용으로 나누고, 차트·계산기·대시보드 중 적합한 형태를 추천하라.'
+            },
+            '총무': {
+                title: '총무/인사 데이터',
+                context: '총무/인사 업무에서 발생하는 다음 데이터를 활용하려 합니다:\n- 부서별 인원 현황과 입퇴사 추이\n- 채용 진행 상태와 면접 일정\n- 교육 이수율, 근태, 복지 신청 현황',
+                criteriaPlaceholder: '예: 리더는 조직 전체 인원 변동과 채용 지연 포지션을 먼저 보고, 담당자는 부서별 상세 현황을 필터로 확인할 수 있어야 합니다.',
+                recommendation: '총무/인사 데이터의 용도를 보고용·계산용·공유용으로 나누고, 차트·계산기·대시보드 중 적합한 형태를 추천하라.'
+            }
+        };
+
+        let currentDept = '제조';
+
+        function changeDept(deptName, event) {
+            currentDept = deptName;
+            const data = deptData[deptName];
+
+            document.querySelectorAll('.dept-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+            });
+
+            if (event && event.target) {
+                event.target.classList.add('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+                event.target.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                event.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            } else {
+                const firstBtn = document.querySelector('.dept-btn');
+                if(firstBtn) {
+                    firstBtn.classList.add('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+                    firstBtn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                }
+            }
+
+            document.getElementById('deptTitleBadge').innerText = data.title;
+            document.getElementById('dashContext').value = data.context;
+            document.getElementById('dashCriteria').placeholder = data.criteriaPlaceholder;
+            document.getElementById('dashCriteria').value = '';
+            generateDashPrompt();
+        }
+
+        function generateDashPrompt() {
+            const data = deptData[currentDept];
+            const contextInput = document.getElementById('dashContext').value || data.context;
+            const criteriaInput = document.getElementById('dashCriteria').value || '[리더가 정한 활용 기준을 입력하면 더 정확한 화면을 설계할 수 있습니다]';
+
+            const prompt = `[Role & Persona]
+당신은 데이터 시각화 전문가이자 업무 도구 설계자입니다.
+나는 한국 중견 제조기업의 팀장/임원으로, 팀이 직접 확인할 수 있는 시각화 자료를 만들고자 합니다.
+
+[1. 업무 데이터 맥락]
+${contextInput}
+
+[2. 리더의 활용 기준]
+${criteriaInput}
+
+[3. 먼저 판단할 것]
+아래 데이터를 보고용·계산용·공유용으로 구분해 주세요.
+- 보고용: 흐름이나 이상 징후를 빠르게 읽어야 하는 자료
+- 계산용: 조건을 바꿔 비교해야 하는 자료
+- 공유용: 팀이 같은 기준으로 함께 확인해야 하는 자료
+
+[4. 요청 사항]
+${data.recommendation}
+각 항목별로 아래 형식으로 답해주세요.
+
+업무 데이터: [데이터명]
+→ 추천 형태: [차트 / 계산기 / 대시보드]
+→ 추천 이유: [왜 이 형태가 적합한지 2~3줄]
+→ 화면 구성: [필요한 지표, 필터, 입력값, 강조 항목]
+→ 바로 쓸 수 있는 프롬프트: "[실제 입력 프롬프트 예시]"
+
+[5. 최종 산출물]
+가장 우선순위가 높은 1개 항목을 골라 HTML + CSS + JavaScript로 구현 가능한 화면 설계안을 작성해 주세요.
+데이터가 없으면 예시 데이터를 넣어서 먼저 구조를 보여주세요.`;
+
+            document.getElementById('finalDashPrompt').innerText = prompt;
+        }
+
+        function copyDashPrompt() {
+            const criteriaInput = document.getElementById('dashCriteria').value;
+            if(!criteriaInput.trim()) {
+                const proceed = confirm("리더님의 '활용 기준'이 입력되지 않았습니다.\n어떤 지표를 보여줄지, 무엇을 계산할지, 어떤 현황을 함께 확인할지 입력하면 더 정확한 설계가 가능합니다.\n\n기본값으로 복사하고 계속하시겠습니까?");
+                if(!proceed) {
+                    document.getElementById('dashCriteria').focus();
+                    return;
+                }
+            }
+
+            const text = document.getElementById('finalDashPrompt').innerText;
+            navigator.clipboard.writeText(text).catch(() => {
+                const el = document.createElement('textarea');
+                el.value = text;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+            });
+
+            const btn = document.getElementById('dashCopyBtn');
+            const checkIcon = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>`;
+            btn.innerHTML = `${checkIcon} <span>✓ 명령서 복사 완료!</span>`;
+            btn.classList.replace('bg-blue-600', 'bg-emerald-600');
+            btn.classList.replace('hover:bg-blue-500', 'hover:bg-emerald-500');
+
+            setTimeout(() => {
+                const copyIcon = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>`;
+                btn.innerHTML = `${copyIcon} <span>명령서 복사 후 Claude 실행</span>`;
+                btn.classList.replace('bg-emerald-600', 'bg-blue-600');
+                btn.classList.replace('hover:bg-emerald-500', 'hover:bg-blue-500');
+                window.open('https://claude.ai', '_blank');
+            }, 2500);
+        }
+
+        window.onload = () => {
+            changeDept('제조', null);
+        };
+    </script>
+</body>
+</html>
