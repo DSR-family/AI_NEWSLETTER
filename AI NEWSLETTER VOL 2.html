@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리더의 AI 곱셈법 제2호: 바이브 코딩의 실체</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        .hero-bg { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Smooth interactions */
+        .dept-btn { transition: all 0.2s ease-in-out; }
+        .dept-btn.active { background-color: #0ea5e9; color: white; border-color: #0ea5e9; box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.3); }
+        .dept-btn:not(.active):hover { background-color: #f1f5f9; border-color: #cbd5e1; }
+        
+        /* DSR Logo Style */
+        .dsr-logo { font-family: 'Pretendard', sans-serif; font-weight: 900; letter-spacing: -0.05em; display: flex; align-items: center; }
+        .dsr-logo span { color: #0284c7; padding: 0 2px; }
+        .dsr-logo .pipe { color: #cbd5e1; font-weight: 200; margin: 0 4px; }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-blue-200 selection:text-blue-900">
+
+    <nav class="fixed top-0 w-full z-50 px-6 lg:px-10 py-4 flex justify-between items-center bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
+        <div class="flex items-center gap-4">
+            <img src="DSR_파란바_배경없음.png" alt="DSR Logo" class="h-8 object-contain" onerror="this.outerHTML='<div class=\'dsr-logo text-3xl\'><span>D</span><span class=\'pipe\'>|</span><span>S</span><span class=\'pipe\'>|</span><span>R</span></div>'">
+            <div class="border-l border-slate-300 pl-4">
+                <span class="text-xl font-black tracking-tight text-slate-900 block leading-none uppercase">AI Multiplier</span>
+                <span class="text-[10px] text-blue-600 font-bold tracking-[0.2em] uppercase">Intelligence for Leaders</span>
+            </div>
+        </div>
+        <div class="hidden md:flex items-center gap-4">
+            <span class="text-xs font-semibold text-slate-500 tracking-wider">Premium Newsletter</span>
+            <div class="text-[11px] font-bold text-slate-700 tracking-widest uppercase bg-slate-100 border border-slate-200 px-4 py-1.5 rounded-full shadow-inner">
+                Phase 1 / Vol. 02
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-24">
+        <section class="hero-bg py-24 px-6 mb-20 border-b border-blue-100/50 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMEw0IDRaIiBzdHJva2U9IiM5NGExYjIiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz4KPC9zdmc+')] opacity-50 pointer-events-none"></div>
+            <div class="max-w-5xl mx-auto relative z-10 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/80 text-blue-800 text-[11px] font-black uppercase tracking-widest mb-8 border border-blue-200 shadow-sm backdrop-blur-sm">
+                    Executive Focus
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black mb-8 leading-[1.15] tracking-tight text-slate-900">
+                    코딩 없이 자연어로,<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">'바이브 코딩'</span>으로 앱을 만드십시오.
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 max-w-3xl leading-relaxed font-medium mx-auto md:mx-0">
+                    IT 지식이 없어도 말(자연어)만으로 나만의 맞춤형 도구를 개발하는 시대입니다. 리더는 코더가 아니라 논리와 프로세스를 기획하는 <strong class="text-blue-700">'시스템 아키텍트'</strong>가 되어야 합니다.
+                </p>
+            </div>
+        </section>
+
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-slate-100 relative overflow-hidden">
+                <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-50 rounded-full blur-3xl z-0"></div>
+                
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-1 h-8 bg-blue-600 rounded-full"></div>
+                        <h2 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">앞으로의 여정: 리더의 AI 전략 로드맵</h2>
+                    </div>
+                    <p class="text-slate-600 mb-12 leading-relaxed max-w-4xl text-lg">
+                        본 리포트는 실무진의 AI 활용 방식을 이해하고, 리더 본인의 전문성을 통해 시스템을 지휘하는 3단계 마스터 로드맵을 제공합니다. 매 호마다 영상 통찰력(Radar), 실무 검증법(해독기), 실전 지휘 미션(Action Lab)이 고정 제공됩니다.
+                    </p>
+                    
+                    <div class="grid lg:grid-cols-3 gap-6">
+                        <!-- Phase 1 -->
+                        <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100 relative shadow-sm">
+                            <span class="text-xs font-black uppercase tracking-wider text-blue-600 mb-2 block">Phase 1. 지휘권 확보</span>
+                            <h4 class="text-base font-bold text-slate-900 mb-4 pb-3 border-b border-blue-200">소통의 해상도 높이기</h4>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start gap-2">
+                                    <strong class="text-slate-400">Vol.01</strong> 
+                                    <span class="text-slate-500 line-through">에이전트를 지휘하는 리더의 내공</span>
+                                </li>
+                                <li class="flex items-center gap-2 relative bg-white p-2 -ml-2 rounded-lg shadow-sm border border-blue-100">
+                                    <span class="absolute -left-1 w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+                                    <strong class="text-blue-700 ml-2">Vol.02</strong> 
+                                    <span class="text-slate-900 font-bold">'바이브 코딩'의 원리와 실체</span>
+                                </li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.03</strong> <span class="text-slate-600">검색의 종말, '딥 리서치' 활용법</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.04</strong> <span class="text-slate-600">우리 팀의 무기 고르기 (AI 3대장)</span></li>
+                            </ul>
+                        </div>
+                        <!-- Phase 2 -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 opacity-80">
+                            <span class="text-xs font-black uppercase tracking-wider text-slate-400 mb-2 block">Phase 2. 자산화</span>
+                            <h4 class="text-base font-bold text-slate-700 mb-4 pb-3 border-b border-slate-200">데이터 시각화와 맞춤 비서</h4>
+                            <ul class="space-y-3 text-sm text-slate-500">
+                                <li class="flex items-start gap-2"><strong>Vol.05</strong> <span>아티팩트로 그리는 직관적 대시보드</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.06</strong> <span>지식을 복제하는 '프로젝트' 설정</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.07</strong> <span>우리 팀만의 전문가, 'Gems' 운영</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.08</strong> <span>흩어진 사내 데이터 통합 (커넥터)</span></li>
+                            </ul>
+                        </div>
+                        <!-- Phase 3 -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 opacity-80">
+                            <span class="text-xs font-black uppercase tracking-wider text-slate-400 mb-2 block">Phase 3. 시스템화</span>
+                            <h4 class="text-base font-bold text-slate-700 mb-4 pb-3 border-b border-slate-200">자동화와 전략적 의사결정</h4>
+                            <ul class="space-y-3 text-sm text-slate-500">
+                                <li class="flex items-start gap-2"><strong>Vol.09</strong> <span>스스로 보고하는 '슈퍼 젬스' 파이프라인</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.10</strong> <span>노코드 시스템 엔지니어링 (Opal)</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.11</strong> <span>최종 결정의 방어벽, 'AI 레드팀'</span></li>
+                                <li class="flex items-start gap-2"><strong>Vol.12</strong> <span>대체 불가능한 리더의 본질</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Radar (Video Section) -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-2 md:p-3 rounded-[2rem] shadow-2xl border border-slate-100">
+                        <!-- 수정된 썸네일 기반 비디오 플레이어 -->
+                        <div class="video-wrapper bg-slate-100 cursor-pointer group" onclick="window.open('https://youtu.be/C9aQKsL2NVM', '_blank')">
+                            <!-- 유튜브 썸네일 이미지 자동 불러오기 -->
+                            <img src="https://img.youtube.com/vi/C9aQKsL2NVM/maxresdefault.jpg" alt="바이브 코딩 영상" class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105">
+                            
+                            <!-- 🔴 유튜브 스타일 재생 버튼 디자인 -->
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-all z-10">
+                                <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center px-2">
+                        <span class="text-[11px] font-bold text-slate-400 tracking-widest uppercase">Video Insight Source</span>
+                        <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">비디오머그 / 나만 안 해 바이브 코딩</span>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 space-y-8 mt-8 lg:mt-0">
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-black mb-4 rounded-md uppercase tracking-wider border border-blue-100">Strategic Radar</div>
+                        <h3 class="text-3xl font-black mb-6 text-slate-900 leading-tight">나만 안 해, 바이브 코딩...<br>생산성 혁신의 현주소</h3>
+                        <p class="text-slate-600 text-base leading-relaxed mb-6">
+                            단순히 프롬프트를 치는 것을 넘어, 이제 AI가 코딩을 직접 수행해 웹과 앱을 만들어주는 <strong>'바이브 코딩(Vibe Coding)'</strong> 시대가 도래했습니다.
+                        </p>
+                        <p class="text-slate-600 text-base leading-relaxed mb-8">
+                            비개발자도 아이디어와 큰 그림만 있으면, AI 코딩 어시스턴트(Cursor, V0, Claude 등)와 대화하며 단 몇 시간 만에 실무에 투입할 수 있는 강력한 사내 도구를 구축할 수 있습니다. 
+                        </p>
+                    </div>
+                    
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm">
+                        <h4 class="text-sm font-bold text-slate-800 uppercase tracking-widest mb-4 border-b border-slate-200 pb-2">The Leader's Role</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            실무진이 바이브 코딩으로 앱을 '뚝딱' 만들어내는 속도전에 돌입했습니다. 리더에게 필요한 것은 코딩 문법 지식이 아닙니다. 앱이 우리 조직의 비즈니스 로직과 보안 기준에 맞게 설계되었는지 검증하는 <strong>'기획의 본질(Architecture)'</strong>을 꿰뚫어보는 안목입니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Workflow 해독기 -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="bg-slate-900 rounded-[3rem] p-10 md:p-16 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
+                
+                <div class="relative z-10 text-white">
+                    <div class="max-w-3xl mb-12">
+                        <div class="inline-block px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-blue-300 text-xs font-black mb-6 border border-white/10 uppercase tracking-widest">Team Workflow 해독기</div>
+                        <h2 class="text-3xl md:text-4xl font-black leading-tight tracking-tight mb-4">바이브 코딩 결과물을 검증하는 '3대 필터'</h2>
+                        <p class="text-slate-400 text-base leading-relaxed font-light">
+                            실무진이 AI로 만들어 온 시스템(앱, 대시보드 등)을 마주했을 때, 리더는 화려한 UI에 현혹되지 말고 다음 세 가지 핵심 로직을 필터링해야 합니다.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- Filter 1 -->
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-3xl transition-transform hover:-translate-y-1">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-black mb-4">01</div>
+                            <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Logic (비즈니스 로직)</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                "이 앱의 작동 흐름이 우리 현장의 실제 결재 및 업무 프로세스와 정확히 일치하는가?"<br><br>현장의 병목을 해결하는 로직인지, 단순히 그럴싸한 기능만 나열했는지 파악하십시오.
+                            </p>
+                        </div>
+                        <!-- Filter 2 -->
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-3xl transition-transform hover:-translate-y-1">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-black mb-4">02</div>
+                            <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Exception (예외 처리)</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                "사용자가 잘못된 값을 입력하거나 데이터가 누락되었을 때, 앱이 멈추지 않고 대안을 제시하는가?"<br><br>AI가 놓치기 쉬운 '현장의 엣지 케이스(돌발 상황)' 대응 시나리오를 점검하십시오.
+                            </p>
+                        </div>
+                        <!-- Filter 3 -->
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-3xl transition-transform hover:-translate-y-1">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-black mb-4">03</div>
+                            <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-3">Security (보안 및 권한)</h4>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                "민감한 사내 데이터가 외부에 노출될 위험은 없는가?"<br><br>데이터의 저장 위치, 임직원 직급별 접근 권한 설정 등 데이터 거버넌스가 철저히 기획되었는지 확인하십시오.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Lab -->
+        <section class="max-w-6xl mx-auto px-6">
+            <div class="mb-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-600 rounded-lg text-white text-[11px] font-black mb-4 uppercase tracking-widest shadow-md">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-200 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                        </span>
+                        Action Lab: 오늘의 지휘 미션
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black tracking-tight text-slate-900 mb-2">우리 팀만의 맞춤형 '미니 앱' 기획하기</h2>
+                    <p class="text-slate-600 text-lg">AI 코딩 도구(Cursor, Claude 등)에 바로 입력하여 앱을 개발할 수 있는 **마스터 기획 프롬프트**를 설계해 보십시오.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-slate-200 overflow-hidden flex flex-col lg:flex-row">
+                
+                <!-- Left: Inputs -->
+                <div class="w-full lg:w-5/12 bg-slate-50 p-6 md:p-10 border-b lg:border-b-0 lg:border-r border-slate-200 flex flex-col">
+                    
+                    <div class="mb-8">
+                        <label class="text-xs font-black text-slate-500 uppercase tracking-widest mb-3 block">1. 담당 부서 선택</label>
+                        <div class="flex overflow-x-auto pb-2 scrollbar-hide gap-2 mask-linear-fade">
+                            <button onclick="changeDept('제조', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200 active">🏭 제조/생산</button>
+                            <button onclick="changeDept('품질', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">🔎 품질관리</button>
+                            <button onclick="changeDept('기술', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">💡 기술/R&D</button>
+                            <button onclick="changeDept('판매', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">🤝 판매/영업</button>
+                            <button onclick="changeDept('설비', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">⚙️ 설비/보전</button>
+                            <button onclick="changeDept('회계', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">📊 회계/재무</button>
+                            <button onclick="changeDept('총무', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">👥 총무/인사</button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 flex-grow">
+                        <div>
+                            <label class="text-xs font-black text-slate-500 uppercase tracking-widest mb-2 block flex items-center justify-between">
+                                <span>2. App Concept (앱 핵심 기능)</span>
+                                <span id="deptTitleBadge" class="bg-slate-200 text-slate-600 text-[10px] px-2 py-0.5 rounded">설비 이상 원클릭 보고</span>
+                            </label>
+                            <textarea id="missionContext" rows="4" class="w-full p-4 text-sm text-slate-700 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none shadow-sm"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="text-xs font-black text-blue-600 uppercase tracking-widest mb-2 block">
+                                3. Key Requirement (리더의 핵심 요구사항)
+                            </label>
+                            <p class="text-[11px] text-slate-500 mb-2 leading-tight">반드시 포함되어야 할 예외 처리, 보안, 또는 특정 UI 레이아웃을 입력하십시오. (우측 프롬프트에 실시간 반영)</p>
+                            <textarea id="missionVariable" rows="3" class="w-full p-4 text-sm text-slate-900 bg-blue-50/50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none placeholder-slate-400 shadow-sm transition-all"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Output Prompt (Terminal Style) -->
+                <div class="w-full lg:w-7/12 bg-[#0f172a] p-6 md:p-10 flex flex-col relative">
+                    <div class="flex items-center justify-between mb-6">
+                        <label class="text-xs font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            Vibe Coding Prompt (For Cursor / Claude)
+                        </label>
+                        <span class="text-[10px] text-blue-400 bg-blue-400/10 border border-blue-400/20 px-2 py-0.5 rounded font-mono">App Architect Level</span>
+                    </div>
+                    
+                    <div class="flex-grow relative">
+                        <pre id="finalPromptText" class="text-[13px] text-slate-300 font-mono whitespace-pre-wrap leading-relaxed overflow-y-auto scrollbar-hide h-64 lg:h-[400px] w-full focus:outline-none selection:bg-blue-500/30 selection:text-white pb-10"></pre>
+                        <div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-[#0f172a] to-transparent pointer-events-none"></div>
+                    </div>
+                    
+                    <div class="mt-6 pt-6 border-t border-slate-800 flex justify-end shrink-0">
+                        <button onclick="copyActionPrompt()" id="actionCopyBtn" class="w-full md:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                            <span>앱 기획서 복사 후 제미나이(또는 AI 코딩) 실행</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 실행 가이드 섹션 추가 -->
+            <div class="mt-12 bg-white border border-blue-100 rounded-[2rem] p-8 lg:p-10 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-48 h-48 bg-blue-50 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
+                
+                <div class="flex items-center gap-4 mb-8 border-b border-slate-100 pb-5 relative z-10">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shadow-sm shrink-0">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-black text-slate-900 tracking-tight">💡 생성된 코드는 어떻게 실행하나요? (1분 구동 가이드)</h3>
+                        <p class="text-sm md:text-base text-slate-500 mt-1 font-medium">코딩 지식이 전혀 없으셔도, 개인 PC와 스마트폰에서 앱을 즉시 띄워볼 수 있습니다.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10 relative z-10">
+                    <!-- Method 1 -->
+                    <div class="space-y-4 bg-slate-50/50 p-6 rounded-2xl border border-slate-100">
+                        <div class="inline-block px-3 py-1.5 bg-emerald-50 text-emerald-700 text-xs font-black tracking-wider rounded-lg border border-emerald-200 uppercase">가장 빠른 확인법</div>
+                        <h4 class="text-lg font-bold text-slate-800">최신 AI 도구의 '미리보기 기능' 활용</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            최근 업데이트된 주요 AI 도구들은 코드를 텍스트로 보여주지 않고 즉시 화면(앱)으로 띄워주는 혁신적인 기능을 지원합니다.<br><br>
+                            👉 <strong>추천 도구:</strong> <span class="text-blue-600 font-bold">Claude (클로드), ChatGPT (캔버스 모드)</span><br>
+                            👉 위 마스터 프롬프트를 복사하여 대화창에 넣기만 하면, 우측에 즉시 마우스로 클릭 및 조작 가능한 앱 화면이 나타납니다.
+                        </p>
+                    </div>
+
+                    <!-- Method 2 -->
+                    <div class="space-y-4 bg-slate-50/50 p-6 rounded-2xl border border-slate-100">
+                        <div class="inline-block px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-black tracking-wider rounded-lg border border-blue-200 uppercase">현장 시연 및 소장용</div>
+                        <h4 class="text-lg font-bold text-slate-800">AI가 짠 코드를 '진짜 내 앱'으로 만들기</h4>
+                        <ol class="list-decimal list-inside text-sm text-slate-600 leading-relaxed space-y-2.5">
+                            <li>AI가 답변으로 뱉어낸 검은색 코드 상자의 우측 상단 <strong>'Copy code(복사)'</strong>를 클릭합니다.</li>
+                            <li>PC의 <strong>'메모장'</strong>(Windows) 또는 <strong>'텍스트 편집기'</strong>(Mac)를 엽니다.</li>
+                            <li>복사한 코드를 그대로 붙여넣고, [파일] ➔ [다른 이름으로 저장]을 누릅니다.</li>
+                            <li>파일 이름을 <strong class="text-blue-700 bg-blue-100/50 px-1.5 py-0.5 rounded border border-blue-100">나만의앱.html</strong> 로 적고, 파일 형식을 <strong>'모든 파일'</strong>로 변경 후 바탕화면에 저장합니다.</li>
+                            <li>바탕화면에 생긴 아이콘을 더블클릭하면 브라우저에서 진짜 앱이 실행됩니다!</li>
+                        </ol>
+                        <div class="mt-5 p-4 bg-white border border-slate-200 rounded-xl text-sm text-slate-600 shadow-sm relative overflow-hidden">
+                            <div class="absolute left-0 top-0 w-1 h-full bg-blue-500"></div>
+                            <strong class="text-slate-800 flex items-center gap-2 mb-1">
+                                <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                                📱 현장에서 스마트폰으로 시연하려면?
+                            </strong>
+                            방금 PC에서 만든 <span class="font-mono text-xs text-blue-600 bg-blue-50 px-1 rounded">.html</span> 파일을 카카오톡 '나에게 쓰기'로 보내보세요. 스마트폰에서 파일 터치 한 번이면 즉시 동작하는 모바일 앱이 열립니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="py-12 px-8 bg-slate-900 text-white border-t border-slate-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start">
+                <div class="bg-white px-3 py-1.5 rounded-md mb-4 inline-block">
+                    <img src="DSR_파란바_배경없음.png" alt="DSR Logo" class="h-6 object-contain" onerror="this.outerHTML='<span class=\'text-blue-600 font-black\'>D|S|R</span>'">
+                </div>
+                <p class="text-sm text-slate-400 max-w-md text-center md:text-left leading-relaxed">
+                    본 리포트는 DSR 리더의 전략적 성장을 위해 발행됩니다. 리더의 전문성은 AI 시대에 소멸되는 것이 아니라, 더 정교한 시스템을 설계하는 아키텍트의 자산이 됩니다.
+                </p>
+            </div>
+            <div class="text-[11px] text-slate-500 tracking-widest font-semibold text-center md:text-right uppercase leading-loose">
+                Copyright © 2026 DSR Corp. & DSR Wire Corp.<br>All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const deptData = {
+            '제조': {
+                title: '스마트팩토리 설비 이상 실시간 보고 대시보드',
+                context: '제조 현장에서 설비 이상 발생 시, 작업자가 스마트폰으로 사진을 찍고 증상을 입력하면 AI가 즉각 불량 유형을 분류하고, 공장장과 보전팀에게 알림을 보내는 모바일 최적화 웹 앱을 기획합니다.',
+                varPlaceholder: '예: 현장 작업자가 두꺼운 장갑을 낀 상태에서도 터치하기 쉽도록 핵심 버튼(긴급 정지, 사진 촬영 등)을 화면의 30% 이상 크기로 배치할 것.',
+                systemPersona: '[System Persona: Tesla Smart Factory Architect & Lead Frontend Engineer]',
+                task: '상단에는 실시간 공장 가동률(Chart.js 활용), 하단에는 큼직한 [이상 징후 보고] 버튼과 사진 업로드 폼이 있는 직관적인 하이브리드 대시보드를 생성하라.'
+            },
+            '품질': {
+                title: 'AI 비전 불량 판독 시뮬레이터 & 품질 통계 보드',
+                context: '작업자가 제품 사진을 올리면 AI가 즉시 불량 등급(A/B/C/Fail)을 판정하고, 실시간으로 금주 불량률 누적 통계를 차트로 보여주는 품질 검수 보조 및 모니터링 앱을 기획합니다.',
+                varPlaceholder: '예: 불량 판정 결과가 "Fail(폐기)"일 경우, 화면 전체에 붉은색 경고 이펙트(점멸)를 1초간 주고 강렬한 시각적 알림을 줄 것.',
+                systemPersona: '[System Persona: Apple QA Engineering Lead & Data Visualization Expert]',
+                task: '좌측에는 드래그 앤 드롭으로 이미지를 올릴 수 있는 판독 구역, 우측에는 Chart.js를 이용한 실시간 불량 유형별 파이 차트(Pie Chart)가 보이는 데스크톱 UI를 기획하라.'
+            },
+            '기술': {
+                title: '글로벌 특허/논문 R&D 인사이트 워크스페이스',
+                context: '국내외 R&D 논문 PDF를 업로드하면, 우리 회사의 기술력과 접목할 수 있는 핵심 아이디어 3줄 요약과 리스크를 추출해 주는 연구원 전용 AI 챗봇 워크스페이스를 기획합니다.',
+                varPlaceholder: '예: 연구 보안이 중요하므로, 화면 우측 상단에 "사내 기밀 데이터 접속 중"이라는 보안 배너를 항상 노출시킬 것.',
+                systemPersona: '[System Persona: OpenAI Research Scientist & UI/UX Director]',
+                task: '화면을 좌우 분할(Split-view)하여, 좌측엔 업로드된 PDF 문서 리스트와 핵심 요약 뷰어, 우측엔 AI와 깊이 있는 토론을 할 수 있는 모던한 채팅 인터페이스를 설계하라.'
+            },
+            '판매': {
+                title: 'B2B 엔터프라이즈 세일즈 파이프라인 보드 & AI 회의록',
+                context: '영업사원이 고객 미팅 직후 음성을 녹음하면 자동으로 텍스트로 변환 및 요약되고, 이를 바탕으로 영업 파이프라인(칸반 보드 형태)의 딜(Deal) 상태를 업데이트하는 CRM 확장 앱을 기획합니다.',
+                varPlaceholder: '예: 요약된 회의 내용 중 수주 금액이나 주요 날짜 데이터는 형광펜으로 칠한 것처럼 하이라이트(Highlight) 처리하여 시인성을 높일 것.',
+                systemPersona: '[System Persona: Salesforce Lead Architect & Enterprise SaaS Designer]',
+                task: '화면 상단에는 영업 단계별 칸반 보드(Kanban) 시뮬레이션, 하단에는 마이크 버튼과 음성 인식 파형 애니메이션이 있는 회의록 요약 폼을 배치하라.'
+            },
+            '설비': {
+                title: '디지털 트윈 설비 예지보전(PdM) 스캐너',
+                context: '각 설비에 부착된 QR코드를 스캔(가정)하면 과거 고장 이력, 부품 재고, 그리고 AI가 예측한 "다음 고장까지 남은 시간(RUL)"을 그래픽으로 띄워주는 정비사 전용 태블릿 앱을 기획합니다.',
+                varPlaceholder: '예: AI가 예측한 고장 확률이 80% 이상이거나 정비 일자가 3일 이내로 남은 설비는, 화면 테두리에 주황색 경고 테두리를 지속적으로 깜빡이게 할 것.',
+                systemPersona: '[System Persona: Siemens Digital Twin Engineer & Mobile UX Expert]',
+                task: '가운데에는 RPM, 온도 등을 나타내는 계기판(Gauge) 디자인, 그 아래에는 과거 정비 이력이 타임라인(Timeline) 컴포넌트로 예쁘게 흘러가는 UI를 작성하라.'
+            },
+            '회계': {
+                title: 'AI 스마트 법인카드 정산 & 실시간 예산 통제 앱',
+                context: '영수증 사진을 찍으면 OCR로 날짜/금액/사용처를 추출해 경비 청구서를 자동 작성하고, 해당 부서의 남은 월간 예산을 즉시 차트로 차감해 보여주는 재무/직원 겸용 앱을 기획합니다.',
+                varPlaceholder: '예: 단일 결제 금액이 50만 원을 초과하면 화면에 즉시 모달(Modal) 창을 띄워 "사전 품의 번호"를 의무적으로 입력하게 막을 것.',
+                systemPersona: '[System Persona: FinTech CTO & Senior Frontend Developer]',
+                task: '영수증 이미지 스캐너 영역과 추출된 폼 데이터를 좌측에, 우측에는 Chart.js를 사용해 부서 예산 소진율을 나타내는 도넛 차트(Doughnut Chart)를 화려하게 배치하라.'
+            },
+            '총무': {
+                title: '임직원 맞춤형 HR 복지 AI 에이전트 데스크',
+                context: '임직원들이 사내 규정(휴가, 복지비, 경조사 등)을 자연어로 질문하면, 수백 페이지의 규정집을 검색해 정확한 답변을 주고 즉시 결재 기안까지 연결해 주는 사내 헬프데스크 앱을 기획합니다.',
+                varPlaceholder: '예: 챗봇 화면 상단에 넷플릭스처럼 임직원이 가장 많이 묻는 "이번 달 급여일", "연차 잔여일" 등의 FAQ를 가로 스크롤 카드 형태로 예쁘게 배치할 것.',
+                systemPersona: '[System Persona: Workday Product Lead & Conversation UI Expert]',
+                task: '모던한 메신저 스타일의 채팅 UI를 중심으로, 하단에는 파일 첨부와 이모지 버튼이 포함된 채팅 입력창, 좌측엔 최근 대화 기록 리스트를 구현하라.'
+            }
+        };
+
+        let currentDept = '제조';
+
+        function changeDept(deptName, event) {
+            currentDept = deptName;
+            const data = deptData[deptName];
+
+            // Tab Styling Updates
+            document.querySelectorAll('.dept-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+            });
+
+            if (event && event.target) {
+                event.target.classList.add('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+                event.target.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                event.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            } else {
+                const firstBtn = document.querySelector('.dept-btn');
+                if(firstBtn) {
+                    firstBtn.classList.add('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+                    firstBtn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                }
+            }
+
+            // Update UI Fields
+            document.getElementById('deptTitleBadge').innerText = data.title;
+            document.getElementById('missionContext').value = data.context;
+            document.getElementById('missionVariable').placeholder = data.varPlaceholder;
+            document.getElementById('missionVariable').value = ''; 
+
+            generatePrompt();
+        }
+
+        function generatePrompt() {
+            const data = deptData[currentDept];
+            const contextInput = document.getElementById('missionContext').value;
+            const variableInput = document.getElementById('missionVariable').value || "[리더의 요구사항 입력 대기 중. (실행 전 반드시 현장의 제약조건을 한 줄이라도 입력하세요)]";
+            
+            const finalPrompt = `[Role & Persona]
+당신은 Apple과 Tesla 출신의 '수석 시스템 아키텍트'이자 '리드 UI/UX 디자이너'입니다. ${data.systemPersona}
+나는 코딩을 모르는 엔터프라이즈 기업의 비즈니스 임원입니다. 내 지시를 바탕으로, 즉시 투자자(또는 CEO)에게 시연해도 손색이 없을 만큼 **완벽하게 작동하고 압도적으로 아름다운 단일 HTML 프로토타입 앱**을 개발해 주세요.
+
+[1. Business Objective & Concept (비즈니스 목표)]
+${contextInput}
+
+[2. Leader's Constraint (현장의 숨겨진 제약조건 및 예외처리 지시)]
+🚨 필수 반영: ${variableInput}
+
+[3. Technical & UI/UX Requirements (최고 수준 시연을 위한 필수 조건)]
+- [Architecture] ${data.task}
+- [Design System] Tailwind CSS(CDN)를 활용하여 모던 엔터프라이즈 SaaS 스타일(부드러운 그림자, 둥근 모서리, 여백의 미)의 고급스러운 UI를 구현하십시오.
+- [Data Visualization] **Chart.js(CDN)를 반드시 로드**하여, 대시보드에 의미 있는 통계 데이터(차트, 그래프)를 시각적이고 화려하게 구현하십시오.
+- [Realistic Mock Data] 화면이 비어 보이지 않도록 '테스트1', '홍길동' 같은 조잡한 데이터가 아닌, **실제 기업 현장에서 쓰일 법한 정교하고 전문적인 한국어/영어 더미 데이터(최소 5~10개 항목)**를 생성하여 화면과 차트를 꽉 채우십시오.
+- [Micro-Interactions & JS Logic] 버튼 클릭 시 로딩 스피너 작동, 성공 시 모던한 Toast 알림창 노출, 모달창(Modal) 열림/닫힘 등 프론트엔드 레벨에서의 사용자 상호작용(JS 로직)이 100% 작동해야 합니다.
+- [Icons] FontAwesome 또는 Lucide Icon(CDN)을 로드하여 전문가 수준의 아이콘을 적재적소에 배치하십시오.
+
+[4. Output Rules (🚨 가장 중요한 엄격한 출력 규칙)]
+1. 환영 인사, 기획 의도 설명, 코드 실행 방법 등 **일체의 마크다운 텍스트 설명은 단 한 줄도 쓰지 마십시오.**
+2. HTML, CSS, JavaScript(Chart.js 로직 포함)가 모두 통합된 **단 1개의 완벽한 HTML 파일 코드(\`\`\`html ... \`\`\`)만을 답변의 처음이자 끝으로 출력하십시오.**
+3. 절대 '// ... existing code ...' 나 '여기에 코드를 추가하세요' 등의 **생략(Placeholder)을 사용하지 마십시오.** 내가 복사해서 브라우저에 여는 즉시 모든 디자인과 기능이 구동되어야 합니다.`;
+
+            document.getElementById('finalPromptText').innerText = finalPrompt;
+        }
+
+        // Event Listeners for real-time prompt generation
+        document.getElementById('missionContext').addEventListener('input', generatePrompt);
+        document.getElementById('missionVariable').addEventListener('input', generatePrompt);
+
+        function copyActionPrompt() {
+            const variableInput = document.getElementById('missionVariable').value;
+            if(!variableInput.trim()) {
+                const proceed = confirm("리더님의 'Key Requirement(핵심 요구사항)'이 입력되지 않았습니다.\n직관이나 제약조건을 입력하시면 바이브 코딩의 결과물 품질이 극대화됩니다.\n\n기본값으로 복사하고 계속하시겠습니까?");
+                if(!proceed) {
+                    document.getElementById('missionVariable').focus();
+                    return;
+                }
+            }
+
+            const text = document.getElementById('finalPromptText').innerText;
+            const tempElem = document.createElement('textarea');
+            tempElem.value = text;
+            document.body.appendChild(tempElem);
+            tempElem.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempElem);
+            
+            const btn = document.getElementById('actionCopyBtn');
+            const iconHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>`;
+            
+            btn.innerHTML = `${iconHTML} <span>✓ 프롬프트 복사 완료!</span>`;
+            btn.classList.replace('bg-blue-600', 'bg-emerald-600');
+            btn.classList.replace('hover:bg-blue-500', 'hover:bg-emerald-500');
+            
+            setTimeout(() => {
+                const originalIcon = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>`;
+                btn.innerHTML = `${originalIcon} <span>앱 기획서 복사 후 제미나이 실행</span>`;
+                btn.classList.replace('bg-emerald-600', 'bg-blue-600');
+                btn.classList.replace('hover:bg-emerald-500', 'hover:bg-blue-500');
+                
+                // Open Gemini in a new tab (Could also be Claude or Cursor homepage depending on preference)
+                window.open('https://gemini.google.com/app', '_blank');
+            }, 2500);
+        }
+
+        // Initial Load
+        window.onload = () => {
+            changeDept('제조', null);
+        };
+    </script>
+</body>
+</html>
