@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리더의 AI 곱셈법 제11호: 이미 시작된 변화에서, 다음을 읽습니다</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        .hero-bg { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        .dept-btn { transition: all 0.2s ease-in-out; }
+        .dept-btn.active { background-color: #0ea5e9; color: white; border-color: #0ea5e9; box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.3); }
+        .dept-btn:not(.active):hover { background-color: #f1f5f9; border-color: #cbd5e1; }
+        .dsr-logo { font-family: 'Pretendard', sans-serif; font-weight: 900; letter-spacing: -0.05em; display: flex; align-items: center; }
+        .dsr-logo span { color: #0284c7; padding: 0 2px; }
+        .dsr-logo .pipe { color: #cbd5e1; font-weight: 200; margin: 0 4px; }
+    </style>
+</head>
+<body class="overflow-x-hidden selection:bg-blue-200 selection:text-blue-900">
+
+    <nav class="fixed top-0 w-full z-50 px-6 lg:px-10 py-4 flex justify-between items-center bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all">
+        <div class="flex items-center gap-4">
+            <img src="DSR_파란바_배경없음.png" alt="DSR Logo" class="h-8 object-contain" onerror="this.outerHTML='<div class=\'dsr-logo text-3xl\'><span>D</span><span class=\'pipe\'>|</span><span>S</span><span class=\'pipe\'>|</span><span>R</span></div>'">
+            <div class="border-l border-slate-300 pl-4">
+                <span class="text-xl font-black tracking-tight text-slate-900 block leading-none uppercase">AI Multiplier</span>
+                <span class="text-[10px] text-blue-600 font-bold tracking-[0.2em] uppercase">Intelligence for Leaders</span>
+            </div>
+        </div>
+        <div class="hidden md:flex items-center gap-4">
+            <span class="text-xs font-semibold text-slate-500 tracking-wider">Premium Newsletter</span>
+            <div class="text-[11px] font-bold text-slate-700 tracking-widest uppercase bg-slate-100 border border-slate-200 px-4 py-1.5 rounded-full shadow-inner">
+                Phase 3 / Vol. 11
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-24">
+
+        <!-- Hero -->
+        <section class="hero-bg py-24 px-6 mb-20 border-b border-blue-100/50 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMEw0IDRaIiBzdHJva2U9IiM5NGExYjIiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz4KPC9zdmc+')] opacity-50 pointer-events-none"></div>
+            <div class="max-w-5xl mx-auto relative z-10 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100/80 text-blue-800 text-[11px] font-black uppercase tracking-widest mb-8 border border-blue-200 shadow-sm backdrop-blur-sm">
+                    Phase 3 · 시스템화
+                </div>
+                <h1 class="text-2xl sm:text-4xl md:text-6xl font-black mb-6 leading-tight tracking-tight text-slate-900 break-keep">
+                    <div>
+                        이미 시작된 변화에서, <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-500">다음을 읽습니다</span>
+                    </div>
+                </h1>
+                <p class="text-base md:text-lg text-slate-600 max-w-2xl leading-relaxed font-medium mx-auto md:mx-0">
+                    지금 AI가 어디까지 왔는지, 그리고 5년 뒤 우리 일터는 어떻게 달라질지 살펴봅니다.
+                </p>
+            </div>
+        </section>
+
+        <!-- Roadmap -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-slate-100 relative overflow-hidden">
+                <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-50 rounded-full blur-3xl z-0"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-1 h-8 bg-blue-600 rounded-full"></div>
+                        <h2 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">앞으로의 여정: 리더의 AI 전략 로드맵</h2>
+                    </div>
+                    <p class="text-slate-600 mb-12 leading-relaxed max-w-4xl text-lg">
+                        본 리포트는 실무진의 AI 활용 방식을 이해하고, 리더 본인의 전문성을 통해 시스템을 지휘하는 3단계 마스터 로드맵을 제공합니다. 매 호마다 영상 통찰력(Radar), 실무 검증법(해독기), 실전 지휘 미션(Action Lab)이 고정 제공됩니다.
+                    </p>
+                    <div class="grid lg:grid-cols-3 gap-6">
+                        <!-- Phase 1 -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 opacity-80">
+                            <span class="text-xs font-black uppercase tracking-wider text-slate-400 mb-2 block">Phase 1. 지휘권 확보</span>
+                            <h4 class="text-base font-bold text-slate-700 mb-4 pb-3 border-b border-slate-200">소통의 해상도 높이기</h4>
+                            <ul class="space-y-3 text-sm text-slate-500">
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.01</strong> <span class="line-through">에이전트를 지휘하는 리더의 내공</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.02</strong> <span class="line-through">'바이브 코딩'의 원리와 실체</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.03</strong> <span class="line-through">검색의 종말, '딥 리서치' 활용법</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.04</strong> <span class="line-through">우리 팀의 무기 고르기 (AI 3대장)</span></li>
+                            </ul>
+                        </div>
+                        <!-- Phase 2 -->
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 opacity-80">
+                            <span class="text-xs font-black uppercase tracking-wider text-slate-400 mb-2 block">Phase 2. 자산화</span>
+                            <h4 class="text-base font-bold text-slate-700 mb-4 pb-3 border-b border-slate-200">데이터 시각화와 맞춤 비서</h4>
+                            <ul class="space-y-3 text-sm text-slate-500">
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.05</strong> <span class="line-through">AI로 만드는 시각화 자료</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.06</strong> <span class="line-through">지식을 복제하는 '프로젝트' 설정</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.07</strong> <span class="line-through">반복 업무를 자동화하는 '스킬' 만들기</span></li>
+                                <li class="flex items-start gap-2"><strong class="text-slate-400">Vol.08</strong> <span class="line-through">커넥터, 안전하게 연결하기</span></li>
+                            </ul>
+                        </div>
+                        <!-- Phase 3 -->
+                        <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100 relative shadow-sm">
+                            <span class="text-xs font-black uppercase tracking-wider text-blue-600 mb-2 block">Phase 3. 시스템화</span>
+                            <h4 class="text-base font-bold text-slate-900 mb-4 pb-3 border-b border-blue-200">현장 사례와 전략적 의사결정</h4>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start gap-2 text-slate-400"><strong class="text-slate-400">Vol.09</strong> <span class="line-through">질문 대신 결과물을 받는 'Cowork'</span></li>
+                                <li class="flex items-start gap-2 text-slate-400"><strong class="text-slate-400">Vol.10</strong> <span class="line-through">AI 실제 현업 적용 사례</span></li>
+                                <li class="flex items-center gap-2 relative bg-white p-2 -ml-2 rounded-lg shadow-sm border border-blue-100">
+                                    <strong class="text-blue-700">Vol.11</strong>
+                                    <span class="text-slate-900 font-bold">AI 미래 전망</span>
+                                </li>
+                                <li class="flex items-start gap-2 text-slate-500"><strong class="text-slate-400">Vol.12</strong> <span>AI 시대 리더의 본질</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capability Brief -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-slate-100 relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-black mb-4 rounded-md uppercase tracking-wider border border-blue-100">Capability Brief</div>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight mb-4">AI는 어떻게 여기까지 왔나 — 4가지 변화</h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed max-w-3xl text-base">
+                        먼저 지금의 AI가 몇 해 전과 무엇이 달라졌는지 짧게 짚습니다. 이 네 가지가 겹치면서 AI는 <strong class="text-slate-800">묻는 대로 답하는 도구</strong>에서 <strong class="text-slate-800">일을 맡아 끝내는 동료</strong>에 가까워졌습니다.
+                    </p>
+
+                    <div class="grid md:grid-cols-2 gap-6 mb-2">
+                        <div class="bg-slate-50 rounded-2xl p-7 border border-slate-200">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center font-black mb-4 text-sm">🎯</div>
+                            <h4 class="text-slate-900 font-black text-base mb-1 break-keep">답하는 AI에서 실행하는 AI로</h4>
+                            <p class="text-slate-500 text-xs font-bold mb-4">일하는 방식의 변화</p>
+                            <p class="text-sm text-slate-600 leading-relaxed">전통적인 챗봇은 요청 하나에 응답 하나로 끝납니다. 에이전트는 목표를 받아 계획을 세우고, 도구를 골라 쓰고, 결과를 검증한 뒤 다음 행동을 정합니다. 9호 Cowork가 바로 이 사례입니다.</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-2xl p-7 border border-slate-200">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center font-black mb-4 text-sm">🧠</div>
+                            <h4 class="text-slate-900 font-black text-base mb-1 break-keep">한 번에 기억하는 양이 커졌습니다</h4>
+                            <p class="text-slate-500 text-xs font-bold mb-4">컨텍스트 윈도우(AI의 단기 기억)</p>
+                            <p class="text-sm text-slate-600 leading-relaxed">기본 대화 수준인 128K 토큰과, 저장소 전체를 담는 100만~1,000만 토큰 규모로 나뉘었습니다. 쉽게 말해 '질문 하나'가 아니라 '프로젝트 전체 자료'를 한 번에 보고 일하는 수준이 됐습니다.</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-2xl p-7 border border-slate-200">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center font-black mb-4 text-sm">🧰</div>
+                            <h4 class="text-slate-900 font-black text-base mb-1 break-keep">용도별로 골라 쓰는 시대가 됐습니다</h4>
+                            <p class="text-slate-500 text-xs font-bold mb-4">모델 등급의 분화</p>
+                            <p class="text-sm text-slate-600 leading-relaxed">까다로운 연구·코딩에는 최상위 모델, 일상 업무에는 중간 등급, 대량의 단순 작업에는 효율적인 모델을 쓰는 식으로 등급이 나뉘고 있습니다. 비용 부담이 줄어든 배경이기도 합니다.</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-2xl p-7 border border-slate-200">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center font-black mb-4 text-sm">🧭</div>
+                            <h4 class="text-slate-900 font-black text-base mb-1 break-keep">경쟁의 초점이 바뀌었습니다</h4>
+                            <p class="text-slate-500 text-xs font-bold mb-4">무엇으로 겨루는가</p>
+                            <p class="text-sm text-slate-600 leading-relaxed">채팅 답변 점수보다 신뢰할 수 있는 에이전트, 도구 활용, 컴퓨터 사용, 작업 경제성 쪽으로 경쟁이 옮겨가고 있습니다. AI를 고르는 기준이 '말을 잘하나'에서 '일을 끝내나'로 바뀐 셈입니다.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategic Radar -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+                <div class="lg:col-span-7">
+                    <div class="bg-white p-2 md:p-3 rounded-[2rem] shadow-2xl border border-slate-100">
+                                        <div class="video-wrapper bg-slate-100 cursor-pointer group" onclick="window.open('https://www.youtube.com/watch?v=wCYCYfNNGUM', '_blank')">
+                            <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900"></div>
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl -translate-y-1/3 translate-x-1/4"></div>
+                            <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-10 text-white">
+                                <p class="text-[11px] md:text-xs font-bold text-blue-300 tracking-widest uppercase mb-2">지식인초대석 EP.129</p>
+                                <p class="text-2xl md:text-4xl font-black leading-tight tracking-tight break-keep">2030년,<br>AI로 달라질 미래</p>
+                                <p class="text-xs md:text-sm text-slate-300 mt-3">구글 클라우드 부사장 모에 압둘라 · 지식인사이드</p>
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center bg-transparent transition-all z-10 pb-16 md:pb-20">
+                                <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center px-2">
+                        <span class="text-[11px] font-bold text-slate-400 tracking-widest uppercase">Video Insight Source</span>
+                        <span class="text-xs text-slate-500 bg-slate-100 px-3 py-1 rounded-full">2030년 AI로 달라질 미래 (지식인초대석 EP.129) 🔗</span>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 space-y-8 mt-8 lg:mt-0">
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-black mb-4 rounded-md uppercase tracking-wider border border-blue-100">Strategic Radar</div>
+                        <p class="text-sm text-slate-500 font-semibold mb-3 leading-relaxed">AI 업계 안쪽에서 바라보는 2030년입니다.</p>
+                        <h3 class="text-3xl font-black mb-6 text-slate-900 leading-tight break-keep">영상을 보실 때<br>함께 생각해볼<br>세 가지</h3>
+                        <p class="text-slate-600 text-base leading-relaxed mb-8">
+                            <span class="block">AI 기업 임원의 관점이라는 점을 감안하고 들어보세요.</span>
+                            이번 호의 전망과 겹치는 부분, 다르게 보는 부분을 비교하면 흐름이 한눈에 들어옵니다.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 shadow-sm">
+                        <h4 class="text-sm font-bold text-slate-800 uppercase tracking-widest mb-4 border-b border-slate-200 pb-2">체크포인트</h4>
+                        <ul class="text-sm text-slate-600 leading-relaxed space-y-4">
+                            <li>
+                                <div class="font-bold text-slate-800">· 2030년을 어떤 모습으로 그리는가</div>
+                                <div class="text-slate-500 pl-3">이번 호 Outlook의 전망과 같은 점, 다른 점을 비교해 봅니다.</div>
+                            </li>
+                            <li>
+                                <div class="font-bold text-slate-800">· AI가 맡는 일의 범위를 어떻게 말하는가</div>
+                                <div class="text-slate-500 pl-3">답하는 데서 끝나는지, 일을 끝까지 맡는다고 보는지 살펴봅니다.</div>
+                            </li>
+                            <li>
+                                <div class="font-bold text-slate-800">· 사람의 역할은 무엇이라고 하는가</div>
+                                <div class="text-slate-500 pl-3">우리 부서의 업무에 비추어 어디가 달라질지 떠올려 봅니다.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9월의 최전선 -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="bg-slate-900 rounded-[3rem] p-10 md:p-16 shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
+                <div class="relative z-10 text-white">
+                    <div class="max-w-3xl mb-12">
+                        <div class="inline-block px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-blue-300 text-xs font-black mb-6 border border-white/10 uppercase tracking-widest">9월의 최전선</div>
+                        <h2 class="text-3xl md:text-4xl font-black leading-tight tracking-tight mb-4 break-keep">최근 가장 뜨거운 두 모델, 아스트라와 Opus 5.5</h2>
+                        <p class="text-slate-400 text-base leading-relaxed font-light">
+                            9월 한 달 사이 OpenAI와 Anthropic이 새 최상위 모델을 연이어 내놓았습니다. 누가 더 낫냐보다, 무엇을 잘하고 어떤 조건으로 쓰게 하는지를 보시면 됩니다.
+                        </p>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- GPT-6 Astra -->
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-7 rounded-3xl transition-transform hover:-translate-y-1 flex flex-col">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-black mb-4 text-sm">🔬</div>
+                            <h4 class="text-white font-black text-sm uppercase tracking-wider mb-1">OpenAI · 9월 초 공개</h4>
+                            <p class="text-blue-400 text-xs font-bold mb-5">수학·과학·설계에 강점</p>
+                            <p class="text-white text-xl font-black leading-snug mb-5 break-keep">GPT-6 아스트라</p>
+                            <div class="border-t border-white/10 pt-5 mt-auto">
+                                <p class="text-sm text-slate-400 leading-relaxed">
+                                    OpenAI는 컴퓨터 활용, 소프트웨어 개발, 과학 연구, 전문직 업무를 겨냥한 가장 강력한 모델이라고 소개했습니다. 수학·과학 계산과 3D 설계(CAD) 같은 정형화된 문제에서 두드러진 성적을 발표했습니다. 사이버보안 위험이 자체 평가의 최고 단계('Critical')에 처음 도달해, 일부 기관에 먼저 열었고 기업 관리자가 직접 켜야 쓸 수 있게 했습니다.
+                                </p>
+                                <p class="text-xs text-slate-500 mt-3"><strong class="text-slate-300">핵심 포인트:</strong> 강점은 수학·과학·설계, 제한적 공개</p>
+                            </div>
+                        </div>
+                        <!-- Claude Opus 5.5 -->
+                        <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-7 rounded-3xl transition-transform hover:-translate-y-1 flex flex-col">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-black mb-4 text-sm">⚙️</div>
+                            <h4 class="text-white font-black text-sm uppercase tracking-wider mb-1">Anthropic · 9월 22일 공개</h4>
+                            <p class="text-blue-400 text-xs font-bold mb-5">코딩·업무 에이전트에 강점</p>
+                            <p class="text-white text-xl font-black leading-snug mb-5 break-keep">Claude Opus 5.5</p>
+                            <div class="border-t border-white/10 pt-5 mt-auto">
+                                <p class="text-sm text-slate-400 leading-relaxed">
+                                    코딩 에이전트와 터미널 작업, 긴 문서 분석에서 강점을 내세웠습니다. Anthropic은 이전 버전(Opus 5)보다 이용 가격을 약 20% 낮추고 출력 속도를 30% 이상 높였다고 밝혔습니다. 브라우저·데스크톱 조작을 점검하는 보호 장치를 함께 넣어, 기업이 도입하기 쉽도록 했다고 설명합니다.
+                                </p>
+                                <p class="text-xs text-slate-500 mt-3"><strong class="text-slate-300">핵심 포인트:</strong> 강점은 코딩·업무 에이전트, 가격 인하</p>
+                            </div>
+                        </div>
+                        <!-- 공통 흐름 -->
+                        <div class="md:col-span-2 bg-white/5 backdrop-blur-sm border border-white/10 p-7 rounded-3xl flex flex-col">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center font-black mb-4 text-sm">🧭</div>
+                            <h4 class="text-white font-black text-sm uppercase tracking-wider mb-1">두 모델에서 함께 읽히는 것</h4>
+                            <p class="text-blue-400 text-xs font-bold mb-5">1등 찾기보다, 일에 맞게 고르기</p>
+                            <ul class="text-sm text-slate-400 leading-relaxed space-y-3">
+                                <li>· 두 모델 모두 <strong class="text-slate-200">한 번에 100만 토큰</strong>을 다룹니다. 프로젝트 전체 자료를 한 번에 보고 일하는 규모입니다.</li>
+                                <li>· 성능 수치는 각 회사의 자체 발표이고 평가 환경이 달라 <strong class="text-slate-200">직접 비교가 어렵습니다.</strong> 분야마다 강점이 갈립니다.</li>
+                                <li>· 최상위 모델일수록 능력과 함께 <strong class="text-slate-200">'어디까지 허용할지'</strong>도 같이 나옵니다. 능력이 커질수록 통제 방식이 중요해지고 있습니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-slate-500 mt-8 leading-relaxed">출처: OpenAI·Anthropic 발표를 정리한 Vellum 비교 글(2026.9), CIO Korea 보도, 각 사 발표 기준입니다. 수치와 설명은 독립 검증 전의 제조사 발표 내용을 포함합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 전망 -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="bg-white rounded-[2.5rem] p-8 md:p-14 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-slate-100 relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-black mb-4 rounded-md uppercase tracking-wider border border-blue-100">Outlook</div>
+                    <h2 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tight mb-4">5년 앞을 보면, AI는 이렇게 달라질 전망입니다</h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed max-w-3xl text-base">
+                        지금 보이는 움직임과 국제 보고서, 전문가 전망을 함께 놓고 네 가지로 정리했습니다. 전망은 앞당겨질 수도, 늦어질 수도 있다는 점을 전제로 읽어주세요.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                            <span class="text-xs font-black uppercase tracking-wider text-blue-600 mb-2 flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[11px] shrink-0">1</span>
+                                더 오래, 더 길게 일합니다
+                            </span>
+                            <p class="text-sm text-slate-600 leading-relaxed">AI가 한 번에 맡아 해내는 일의 길이가 몇 분 단위에서 수 시간 단위로 늘었습니다. 국제 AI 안전 보고서(2026)는 이 추세가 이어지면 <strong class="text-slate-800">2030년경 며칠짜리 소프트웨어 작업도 안정적으로 해낼 수 있다</strong>고 봅니다. 다만 소프트웨어 작업 기준의 전망이며, 모든 업무에 그대로 옮겨진다는 뜻은 아닙니다.</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                            <span class="text-xs font-black uppercase tracking-wider text-blue-600 mb-2 flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[11px] shrink-0">2</span>
+                                전문가 전망은 '몇 년 안'과 '신중론'으로 갈립니다
+                            </span>
+                            <p class="text-sm text-slate-600 leading-relaxed">주요 AI 기업 경영진들은 2~5년 안에 사람 수준에 가까운 AI가 가능하다고 말해왔고(2025년 발언 기준), 예전에 회의적이던 학자들도 '몇 년' 단위로 전망을 바꾸고 있습니다. 반대편에는 <strong class="text-slate-800">투자를 계속 늘리기 어렵다는 점, 목표 설정과 협업이 필요한 길고 모호한 업무는 아직 어렵다는 점, 제도와 조직의 관성</strong>이라는 신중론의 근거가 있습니다. 한 해외 분석 기관은 2030년 무렵까지의 5년을 갈림길로 봅니다. 일자리에 미칠 영향도 경제학자들 사이에서 견해가 갈립니다.</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                            <span class="text-xs font-black uppercase tracking-wider text-blue-600 mb-2 flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[11px] shrink-0">3</span>
+                                화면 밖, 현장으로 나옵니다
+                            </span>
+                            <p class="text-sm text-slate-600 leading-relaxed">보고, 판단하고, 직접 움직이는 <strong class="text-slate-800">'피지컬 AI'</strong>가 공장 안으로 들어옵니다. 현대차그룹은 휴머노이드 '아틀라스'를 2028년부터 미국 공장에 투입하고, 로봇이 위험하고 고된 작업을 맡는 동안 사람은 관리와 부가가치가 높은 업무에 집중하는 구조를 제시했습니다.</p>
+                        </div>
+                        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+                            <span class="text-xs font-black uppercase tracking-wider text-blue-600 mb-2 flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[11px] shrink-0">4</span>
+                                능력이 커져도, 들쭉날쭉함과 통제 과제는 남습니다
+                            </span>
+                            <p class="text-sm text-slate-600 leading-relaxed">국제 AI 안전 보고서는 AI 성능이 고르지 않다고 지적합니다. <strong class="text-slate-800">어려운 수학 문제는 풀면서도 기초적인 지식에서 실수할 수 있다</strong>는 뜻입니다. 또 앞서 본 9월의 두 모델처럼 능력이 커질수록 공개 범위와 보호 장치 같은 <strong class="text-slate-800">통제 방식</strong>도 함께 달라지고 있습니다. 결과를 사람이 확인하는 일은 앞으로도 남습니다.</p>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-slate-400 mt-6 leading-relaxed">출처: 국제 AI 안전 보고서 2026, 80,000 Hours의 AGI 전망 정리(2025년 작성), 현대차그룹 CES 2026 발표.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Lab 참고 사례 -->
+        <section class="max-w-6xl mx-auto px-6 mb-32">
+            <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-slate-100">
+                <div class="inline-block px-3 py-1 bg-blue-50 text-blue-700 text-xs font-black mb-4 rounded-md uppercase tracking-wider border border-blue-100">Action Lab 참고</div>
+                <h2 class="text-xl md:text-2xl font-black text-slate-900 tracking-tight mb-2">이미 움직이는 현장, 6가지 사례</h2>
+                <p class="text-slate-500 mb-8 text-sm leading-relaxed md:whitespace-nowrap">아래 Action Lab에서 우리 부서 업무에 옮겨볼 때 참고하는 사례입니다.</p>
+                <div class="grid md:grid-cols-2 gap-5">
+
+                    <!-- 현대차그룹 아틀라스 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col">
+                        <div class="flex items-start justify-between gap-3 mb-3">
+                            <p class="text-base font-black text-slate-900 break-keep">🤖 현대차그룹 휴머노이드 '아틀라스'</p>
+                            <span class="shrink-0 text-[11px] font-bold text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-full">2028년 투입 계획</span>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">최대 50kg을 2m 이상 높이로 들어 올리고, 하루 만에 작업을 익힐 수 있는 로봇입니다. 구글 딥마인드, 엔비디아와 협력해 AI를 얹고, 현대차·기아가 생산 데이터를 제공합니다. 2028년부터 미국 조지아 공장에 투입하며, 부품 분류 공정부터 시작해 공정 단위로 검증한 뒤 단계적으로 넓혀갑니다. 로봇을 구독 형태로 제공하는 방식도 함께 추진합니다.</p>
+                        <p class="text-sm text-slate-800 leading-relaxed mt-auto"><strong>핵심:</strong> 위험하고 고된 작업은 로봇이 맡고, 사람은 관리와 부가가치가 높은 업무에 집중한다는 구도입니다.</p>
+                    </div>
+
+                    <!-- 한국전기연구원 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col">
+                        <div class="flex items-start justify-between gap-3 mb-3">
+                            <p class="text-base font-black text-slate-900 break-keep">⚙️ 한국전기연구원 자율제조 AI</p>
+                            <span class="shrink-0 text-[11px] font-bold text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-full">연구팀 개발·발표</span>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">기존 공장 로봇은 전문가가 미리 입력한 규칙대로만 움직여서, 작업 환경이 바뀌거나 새 부품이 들어오면 엔지니어가 며칠씩 코드를 다시 짜야 했습니다. 이 기술은 언어를 이해하는 AI가 지시를 받으면, 시각 AI가 카메라로 부품의 3차원 위치를 파악하고, 로봇 제어 AI가 정밀하게 움직이는 식으로 역할을 나눕니다. "저기 빨간 부품"처럼 사람이 쓰는 말로 지시할 수 있습니다.</p>
+                        <p class="text-sm text-slate-800 leading-relaxed mt-auto"><strong>핵심:</strong> 전문가가 일주일 매달리던 공정 재설정을 1시간 이내로 줄였다는 연구팀 발표입니다. 연구팀은 지역 중소·중견기업에 기술 이전을 추진할 계획입니다.</p>
+                    </div>
+
+                    <!-- 댄포스 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col">
+                        <div class="flex items-start justify-between gap-3 mb-3">
+                            <p class="text-base font-black text-slate-900 break-keep">📧 댄포스(덴마크) 주문 처리</p>
+                            <span class="shrink-0 text-[11px] font-bold text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-full">운영 중 (구글클라우드 소개)</span>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">글로벌 제조사 댄포스는 이메일로 들어오는 주문을 AI 에이전트가 처리하도록 했습니다. 주문 처리 과정에서 사람이 하던 판단의 80%를 자동화했습니다.</p>
+                        <p class="text-sm text-slate-800 leading-relaxed mt-auto"><strong>핵심:</strong> 고객에게 답이 가는 시간이 평균 42시간에서 거의 실시간으로 줄었습니다.</p>
+                    </div>
+
+                    <!-- 수자노 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col">
+                        <div class="flex items-start justify-between gap-3 mb-3">
+                            <p class="text-base font-black text-slate-900 break-keep">🔎 수자노(브라질) 데이터 조회</p>
+                            <span class="shrink-0 text-[11px] font-bold text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-full">운영 중 (구글클라우드 소개)</span>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">세계 최대 펄프 제조사인 수자노는 일상 언어로 던진 질문을 AI가 데이터 조회 코드(SQL)로 바꿔주는 에이전트를 만들어, 5만 명의 구성원이 쓰게 했습니다. 코드를 모르는 담당자도 데이터에 직접 질문할 수 있게 된 것입니다.</p>
+                        <p class="text-sm text-slate-800 leading-relaxed mt-auto"><strong>핵심:</strong> 데이터를 조회하는 데 드는 시간이 95% 줄었습니다.</p>
+                    </div>
+
+                    <!-- 삼성전자 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col">
+                        <div class="flex items-start justify-between gap-3 mb-3">
+                            <p class="text-base font-black text-slate-900 break-keep">🗂️ 삼성전자 DX부문 사내 AI</p>
+                            <span class="shrink-0 text-[11px] font-bold text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-full">구축 완료·비서 도입 중</span>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">사내 보안이 보장된 환경에서 챗GPT, 제미나이 엔터프라이즈, 클로드 중 업무에 맞는 AI를 골라 쓸 수 있는 체계를 구축했습니다. 코딩, 메일 작성, 번역, 데이터 분석 등 업무 특성에 맞춰 선택합니다. 여기에 개인의 업무 패턴을 익힌 AI 비서가 일정 관리, 출장 정산, 보고서 초안 작성을 맡는 구조를 사내 업무망에 도입하고 있습니다.</p>
+                        <p class="text-sm text-slate-800 leading-relaxed mt-auto"><strong>핵심:</strong> 한 가지 AI가 아니라 업무별로 골라 쓰고, 개인별 반복 업무는 비서에게 넘기는 구조입니다.</p>
+                    </div>
+
+                    <!-- LG전자 -->
+                    <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col">
+                        <div class="flex items-start justify-between gap-3 mb-3">
+                            <p class="text-base font-black text-slate-900 break-keep">🚢 LG전자 사내 AI 업무 시스템</p>
+                            <span class="shrink-0 text-[11px] font-bold text-slate-500 bg-white border border-slate-200 px-2 py-0.5 rounded-full">운영 중 (보도 기준)</span>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">자체 AI '엑사원'을 사내 업무 시스템의 핵심 엔진으로 채택했습니다. 방대한 사내 기술 문서와 제품 매뉴얼을 학습해, 전 세계 엔지니어가 어려운 기술 문제를 만났을 때 해결책을 바로 찾도록 돕습니다. 공급망 관리에는 AI 에이전트를 결합해, 기후 변화나 물류 차질 같은 위험을 미리 예측하고 우회 경로를 제안합니다.</p>
+                        <p class="text-sm text-slate-800 leading-relaxed mt-auto"><strong>핵심:</strong> 흩어진 사내 노하우를 AI가 꺼내주고, 공급망 대응은 사후에서 사전으로 옮겨갑니다.</p>
+                    </div>
+
+                </div>
+                <p class="text-[11px] text-slate-400 mt-6 leading-relaxed">출처: 현대차그룹 CES 2026 발표(파이낸셜뉴스·헤럴드경제 등), 한국전기연구원 보도(헤럴드경제 2026.5.6), Google Cloud 2026 AI Agent Trends Report, 천지일보(2026.6.18). 수치는 각 기업·기관 발표 기준이며, 독립 검증을 거치지 않았습니다.</p>
+            </div>
+        </section>
+
+        <!-- Action Lab -->
+        <section class="max-w-6xl mx-auto px-6 mb-20">
+            <div class="mb-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-blue-600 rounded-lg text-white text-[11px] font-black mb-4 uppercase tracking-widest shadow-md">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-200 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                        </span>
+                        Action Lab: 오늘의 지휘 미션
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black tracking-tight text-slate-900 mb-2">우리 부서의 '1년 뒤 업무' 그려보기</h2>
+                    <p class="text-slate-600 text-lg">담당 부서와 지금의 업무를 입력하면, 이번 호 사례를 바탕으로 <strong>달라질 업무의 모습과 오늘 시작할 수 있는 첫걸음</strong>을 함께 만들어 드립니다.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] border border-slate-200 overflow-hidden flex flex-col lg:flex-row">
+
+                <!-- Left: Inputs -->
+                <div class="w-full lg:w-5/12 bg-slate-50 p-6 md:p-10 border-b lg:border-b-0 lg:border-r border-slate-200 flex flex-col">
+
+                    <div class="mb-8">
+                        <label class="text-xs font-black text-slate-500 uppercase tracking-widest mb-3 block">1. 담당 부서 선택</label>
+                        <div class="flex overflow-x-auto pb-2 scrollbar-hide gap-2">
+                            <button onclick="changeDept('제조', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200 active">🏭 제조/생산</button>
+                            <button onclick="changeDept('품질', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">🔎 품질관리</button>
+                            <button onclick="changeDept('기술', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">💡 기술/R&D</button>
+                            <button onclick="changeDept('판매', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">🤝 판매/영업</button>
+                            <button onclick="changeDept('설비', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">⚙️ 설비/보전</button>
+                            <button onclick="changeDept('회계', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">📊 회계/재무</button>
+                            <button onclick="changeDept('총무', event)" class="dept-btn shrink-0 px-4 py-2 rounded-xl text-sm font-bold border bg-white text-slate-600 border-slate-200">👥 총무/인사</button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6 flex-grow">
+                        <div>
+                            <label class="text-xs font-black text-slate-500 uppercase tracking-widest mb-2 block flex items-center justify-between">
+                                <span>2. 업무 맥락 (반복·시간 소요 업무)</span>
+                                <span id="deptTitleBadge" class="bg-slate-200 text-slate-600 text-[10px] px-2 py-0.5 rounded">제조/생산 시나리오</span>
+                            </label>
+                            <p class="text-[11px] text-slate-500 mb-2 leading-tight">우리 팀에서 반복적이거나 시간이 많이 드는 업무가 무엇인지 적어주세요.</p>
+                            <textarea id="dashContext" rows="5" oninput="generateDashPrompt()" class="w-full p-4 text-sm text-slate-700 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none shadow-sm"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="text-xs font-black text-blue-600 uppercase tracking-widest mb-2 block">
+                                3. Leader's Goal (1년 뒤를 그려볼 업무)
+                            </label>
+                            <p class="text-[11px] text-slate-500 mb-2 leading-tight">가장 먼저 1년 뒤 모습을 그려보고 싶은 업무를 적어주세요. (우측 프롬프트에 실시간 반영)</p>
+                            <textarea id="dashCriteria" rows="4" oninput="generateDashPrompt()" class="w-full p-4 text-sm text-slate-900 bg-blue-50/50 border border-blue-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none resize-none placeholder-slate-400 shadow-sm transition-all"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Output Prompt (Terminal Style) -->
+                <div class="w-full lg:w-7/12 bg-[#0f172a] p-6 md:p-10 flex flex-col relative">
+                    <div class="flex items-center justify-between mb-6">
+                        <label class="text-xs font-black text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            AI Future Scenario Prompt (For Claude)
+                        </label>
+                        <span class="text-[10px] text-blue-400 bg-blue-400/10 border border-blue-400/20 px-2 py-0.5 rounded font-mono">Workflow Director Level</span>
+                    </div>
+
+                    <div class="flex-grow relative">
+                        <pre id="finalDashPrompt" class="text-[13px] text-slate-300 font-mono whitespace-pre-wrap leading-relaxed overflow-y-auto scrollbar-hide h-64 lg:h-[400px] w-full focus:outline-none selection:bg-blue-500/30 selection:text-white pb-10"></pre>
+                        <div class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-[#0f172a] to-transparent pointer-events-none"></div>
+                    </div>
+
+                    <div class="mt-6 pt-6 border-t border-slate-800 flex flex-col items-end gap-3 shrink-0">
+                        <button onclick="copyDashPrompt()" id="dashCopyBtn" class="w-full md:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+                            <span>명령서 복사 후 Claude 실행</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 px-8 bg-slate-900 text-white border-t border-slate-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start">
+                <div class="bg-white px-3 py-1.5 rounded-md mb-4 inline-block">
+                    <img src="DSR_파란바_배경없음.png" alt="DSR Logo" class="h-6 object-contain" onerror="this.outerHTML='<span class=\'text-blue-600 font-black\'>D|S|R</span>'">
+                </div>
+                <p class="text-sm text-slate-400 max-w-md text-center md:text-left leading-relaxed">
+                    본 리포트는 DSR 리더의 전략적 성장을 위해 발행됩니다. 중요한 것은 AI가 어디까지 왔는지를 아는 것, 그리고 그 흐름 위에서 우리 팀이 어떤 준비를 할지 정하는 것입니다.
+                </p>
+            </div>
+            <div class="text-[11px] text-slate-500 tracking-widest font-semibold text-center md:text-right uppercase leading-loose">
+                Copyright © 2026 DSR Corp. & DSR Wire Corp.<br>All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const deptData = {
+            '제조': {
+                title: '제조/생산 시나리오',
+                context: '제조 현장에서 반복적으로 시간이 드는 업무:\n- 표준작업서·도면 확인\n- 생산일지 취합·보고',
+                criteriaPlaceholder: '예: 매일 쌓이는 생산일지를 취합해 주간 요약표로 만드는 업무',
+                cases: '- 한국전기연구원: 말로 지시해 공정 재설정을 1주에서 1시간 이내로 단축\n- 현대차그룹 아틀라스: 부품 분류 공정부터 시작해 공정별 검증 후 확대',
+                recommendation: '위 업무가 1년 뒤 어떻게 달라질지, 과장 없이 현실적인 범위에서 구체적으로 그려라.'
+            },
+            '품질': {
+                title: '품질관리 시나리오',
+                context: '품질관리팀에서 반복적으로 시간이 드는 업무:\n- 불량 유형별 분류·집계\n- 고객 클레임 대응 문서화',
+                criteriaPlaceholder: '예: 최근 3개월 클레임 문서를 정리해 유형별로 분류하는 업무',
+                cases: '- 수자노: 일상 언어로 묻고 데이터 조회 시간을 95% 단축\n- 한국전기연구원: 여러 AI가 역할을 나눠 공정 운영',
+                recommendation: '위 업무가 1년 뒤 어떻게 달라질지, 과장 없이 현실적인 범위에서 구체적으로 그려라.'
+            },
+            '기술': {
+                title: '기술/R&D 시나리오',
+                context: '기술/R&D팀에서 반복적으로 시간이 드는 업무:\n- 과거 실험·시험 데이터 검색\n- 설계 검증 체크리스트 확인',
+                criteriaPlaceholder: '예: 담당자별로 다르게 쓰던 설계 검증 체크리스트를 하나의 표준 문서로 통합하는 업무',
+                cases: '- LG전자: 기술 문서와 제품 매뉴얼을 학습한 AI가 엔지니어의 문제 해결을 지원\n- 수자노: 일상 언어로 묻고 데이터 조회 시간을 95% 단축',
+                recommendation: '위 업무가 1년 뒤 어떻게 달라질지, 과장 없이 현실적인 범위에서 구체적으로 그려라.'
+            },
+            '판매': {
+                title: '판매/영업 시나리오',
+                context: '판매/영업팀에서 반복적으로 시간이 드는 업무:\n- 거래처별 견적서·계약서 정리\n- 미팅 준비 자료 조사',
+                criteriaPlaceholder: '예: 거래처 미팅 전에 이전 대화·계약 이력을 찾아 요약하는 업무',
+                cases: '- 댄포스: 이메일 주문 처리를 AI가 맡아 고객 응답 시간을 42시간에서 거의 실시간으로 단축\n- 삼성전자: 업무 패턴을 익힌 AI 비서가 일정 관리와 보고서 초안을 담당',
+                recommendation: '위 업무가 1년 뒤 어떻게 달라질지, 과장 없이 현실적인 범위에서 구체적으로 그려라.'
+            },
+            '설비': {
+                title: '설비/보전 시나리오',
+                context: '설비/보전팀에서 반복적으로 시간이 드는 업무:\n- 설비별 고장 이력 정리\n- 정기 점검 결과 보고',
+                criteriaPlaceholder: '예: 매주 지난주 정비 이력을 취합해 리포트로 만드는 업무',
+                cases: '- 한국전기연구원: 말로 지시해 공정 재설정을 1주에서 1시간 이내로 단축\n- LG전자: AI 에이전트가 공급망 위험을 사전에 예측',
+                recommendation: '위 업무가 1년 뒤 어떻게 달라질지, 과장 없이 현실적인 범위에서 구체적으로 그려라.'
+            },
+            '회계': {
+                title: '회계/재무 시나리오',
+                context: '회계/재무팀에서 반복적으로 시간이 드는 업무:\n- 매입·매출 증빙 정리\n- 부서별 예산 집계',
+                criteriaPlaceholder: '예: 이번 달 청구서 파일들을 정리해 항목별 집계표로 만드는 업무',
+                cases: '- 삼성전자: 업무 패턴을 익힌 AI 비서가 출장 정산을 담당\n- 수자노: 일상 언어로 묻고 데이터 조회 시간을 95% 단축',
+                recommendation: '위 업무가 1년 뒤 어떻게 달라질지, 과장 없이 현실적인 범위에서 구체적으로 그려라.'
+            },
+            '총무': {
+                title: '총무/인사 시나리오',
+                context: '총무/인사팀에서 반복적으로 시간이 드는 업무:\n- 채용 지원자 서류 검토\n- 교육 이수 기록 관리',
+                criteriaPlaceholder: '예: 이번 분기 교육 이수 기록을 정리해 부서별 현황표로 만드는 업무',
+                cases: '- 삼성전자: 업무 패턴을 익힌 AI 비서가 일정 관리와 보고서 초안을 담당\n- 댄포스: 이메일 기반 업무 처리를 AI가 맡아 응답 시간을 크게 단축',
+                recommendation: '위 업무가 1년 뒤 어떻게 달라질지, 과장 없이 현실적인 범위에서 구체적으로 그려라.'
+            }
+        };
+
+        let currentDept = '제조';
+
+        function changeDept(deptName, event) {
+            currentDept = deptName;
+            const data = deptData[deptName];
+
+            document.querySelectorAll('.dept-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+                btn.classList.add('bg-white', 'text-slate-600', 'border-slate-200');
+            });
+
+            if (event && event.target) {
+                event.target.classList.add('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+                event.target.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                event.target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            } else {
+                const firstBtn = document.querySelector('.dept-btn');
+                if(firstBtn) {
+                    firstBtn.classList.add('active', 'bg-blue-600', 'text-white', 'border-blue-600');
+                    firstBtn.classList.remove('bg-white', 'text-slate-600', 'border-slate-200');
+                }
+            }
+
+            document.getElementById('deptTitleBadge').innerText = data.title;
+            document.getElementById('dashContext').value = data.context;
+            document.getElementById('dashCriteria').placeholder = data.criteriaPlaceholder;
+            document.getElementById('dashCriteria').value = '';
+            generateDashPrompt();
+        }
+
+        function generateDashPrompt() {
+            const data = deptData[currentDept];
+            const contextInput = document.getElementById('dashContext').value || data.context;
+            const criteriaInput = document.getElementById('dashCriteria').value || '[1년 뒤 모습을 그려보고 싶은 업무를 입력하면 더 정확한 결과가 만들어집니다]';
+
+            const prompt = `[Role & Persona]
+당신은 AI 업무 혁신 컨설턴트입니다.
+나는 한국 중견 제조기업의 팀장/임원으로, AI가 '답하는 도구'에서 '실행하는 동료'로 발전하는 흐름 속에서 우리 팀 업무가 1년 뒤 어떻게 달라질지 그려보고 싶습니다.
+
+[1. 우리 팀에서 반복·시간 소요되는 업무]
+${contextInput}
+
+[2. 1년 뒤 모습을 그려보고 싶은 업무]
+${criteriaInput}
+
+[3. 참고할 실제 사례]
+${data.cases}
+
+[4. 요청 사항]
+${data.recommendation}
+아래 항목을 포함해 정리해 주세요.
+
+---
+1. 위 사례 중 우리 업무와 가장 가까운 사례 1개를 고르고, 그 방식을 우리 업무에 옮기면 어떻게 달라지는지
+2. 지금 방식과 1년 뒤 방식의 비교 (업무 순서 기준)
+3. AI가 맡을 부분과 사람이 판단·확인할 부분의 구분
+4. 오늘 바로 시도해볼 수 있는 작은 첫걸음 프롬프트 2개
+
+[5. 최종 확인]
+위 시나리오가 현실적인지, 어떤 조건(자료 정리, 결재 흐름 등)이 갖춰져야 실현되는지 함께 짚어주세요.`;
+
+            document.getElementById('finalDashPrompt').innerText = prompt;
+        }
+
+        function copyDashPrompt() {
+            const criteriaInput = document.getElementById('dashCriteria').value;
+            if(!criteriaInput.trim()) {
+                const proceed = confirm("1년 뒤 모습을 그려보고 싶은 업무가 입력되지 않았습니다.\n어떤 업무를 그려보고 싶은지 입력하면 더 정확한 결과가 만들어집니다.\n\n기본값으로 복사하고 계속하시겠습니까?");
+                if(!proceed) {
+                    document.getElementById('dashCriteria').focus();
+                    return;
+                }
+            }
+
+            const text = document.getElementById('finalDashPrompt').innerText;
+            navigator.clipboard.writeText(text).catch(() => {
+                const el = document.createElement('textarea');
+                el.value = text;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+            });
+
+            const btn = document.getElementById('dashCopyBtn');
+            const checkIcon = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>`;
+            btn.innerHTML = `${checkIcon} <span>✓ 명령서 복사 완료!</span>`;
+            btn.classList.replace('bg-blue-600', 'bg-emerald-600');
+            btn.classList.replace('hover:bg-blue-500', 'hover:bg-emerald-500');
+
+            setTimeout(() => {
+                const copyIcon = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>`;
+                btn.innerHTML = `${copyIcon} <span>명령서 복사 후 Claude 실행</span>`;
+                btn.classList.replace('bg-emerald-600', 'bg-blue-600');
+                btn.classList.replace('hover:bg-emerald-500', 'hover:bg-blue-500');
+                window.open('https://claude.ai', '_blank');
+            }, 2500);
+        }
+
+        window.onload = () => {
+            changeDept('제조', null);
+        };
+    </script>
+</body>
+</html>
